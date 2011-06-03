@@ -21,10 +21,10 @@ In this showcase you'll see the following in action:
 To run:
 -------------------
 From the command line:	
-	$ mvn clean install tomcat:run
+$ mvn clean install tomcat:run
 
 In SpringSource Tool Suite (STS):
-	Simply import the project into STS and drag-n-drop the project onto the "SpringSource tc Server Developer Edition" or another Servlet 2.5 or > Server to run.
+Simply import the project into STS and drag-n-drop the project onto the "SpringSource tc Server Developer Edition" or another Servlet 2.5 or > Server to run.
 
 Access the deployed web application at: http://localhost:8080/mvc-showcase/
 
