@@ -3,10 +3,10 @@ package org.springframework.samples.mvc.form;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
-import org.springframework.samples.mvc.AjaxUtils;
-import org.springframework.samples.mvc.flash.FlashMap;
-import org.springframework.samples.mvc.flash.FlashMap.Message;
-import org.springframework.samples.mvc.flash.FlashMap.MessageType;
+import org.springframework.mvc.extensions.ajax.AjaxUtils;
+import org.springframework.mvc.extensions.flash.FlashMap;
+import org.springframework.mvc.extensions.flash.FlashMap.Message;
+import org.springframework.mvc.extensions.flash.FlashMap.MessageType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;

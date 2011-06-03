@@ -43,71 +43,87 @@ public class FormBean {
 	
 	private Map<String, String> additionalInfo;
 
-	public String getName() {
+    public String getName() {
 		return name;
 	}
-	
+
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+
 	public int getAge() {
 		return age;
 	}
-	
+
 	public void setAge(int age) {
 		this.age = age;
 	}
-	
+
 	public Date getBirthDate() {
 		return birthDate;
 	}
-	
+
 	public void setBirthDate(Date birthDate) {
 		this.birthDate = birthDate;
 	}
-	
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
 	public BigDecimal getCurrency() {
 		return currency;
 	}
-	
+
 	public void setCurrency(BigDecimal currency) {
 		this.currency = currency;
 	}
-	
+
+	public BigDecimal getPercent() {
+		return percent;
+	}
+
+	public void setPercent(BigDecimal percent) {
+		this.percent = percent;
+	}
+
 	public InquiryType getInquiry() {
 		return inquiry;
 	}
-	
-	public void setInqury(InquiryType inquiry) {
+
+	public void setInquiry(InquiryType inquiry) {
 		this.inquiry = inquiry;
 	}
-	
+
 	public String getInquiryDetails() {
 		return inquiryDetails;
 	}
-	
+
 	public void setInquiryDetails(String inquiryDetails) {
 		this.inquiryDetails = inquiryDetails;
 	}
-	
-	public boolean getSubscribeNewsletter() {
+
+	public boolean isSubscribeNewsletter() {
 		return subscribeNewsletter;
 	}
-	
-	public void setSubscribeNewsletter(boolean subscribeNewsLetter) {
-		this.subscribeNewsletter = subscribeNewsLetter;
+
+	public void setSubscribeNewsletter(boolean subscribeNewsletter) {
+		this.subscribeNewsletter = subscribeNewsletter;
 	}
-	
+
 	public Map<String, String> getAdditionalInfo() {
 		return additionalInfo;
 	}
-	
+
 	public void setAdditionalInfo(Map<String, String> additionalInfo) {
 		this.additionalInfo = additionalInfo;
 	}
-	
-    public String toString() {
+
+	public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("properties name=");
         if (name != null) {

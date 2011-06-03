@@ -30,18 +30,18 @@ public class JavaBean {
 	// nested will be set when it is referenced e.g. nested.foo=value
 	private NestedBean nested;
 
-	public Integer getPrimitive() {
+    public Integer getPrimitive() {
 		return primitive;
 	}
-	
+
 	public void setPrimitive(Integer primitive) {
 		this.primitive = primitive;
 	}
-	
+
 	public Date getDate() {
 		return date;
 	}
-	
+
 	public void setDate(Date date) {
 		this.date = date;
 	}
@@ -49,44 +49,44 @@ public class JavaBean {
 	public String getMasked() {
 		return masked;
 	}
-	
+
 	public void setMasked(String masked) {
 		this.masked = masked;
 	}
-	
+
 	public List<Integer> getList() {
 		return list;
 	}
-	
+
 	public void setList(List<Integer> list) {
 		this.list = list;
 	}
-	
+
 	public List<Date> getFormattedList() {
 		return formattedList;
 	}
-	
+
 	public void setFormattedList(List<Date> formattedList) {
 		this.formattedList = formattedList;
 	}
-	
+
 	public Map<Integer, String> getMap() {
 		return map;
 	}
-	
+
 	public void setMap(Map<Integer, String> map) {
 		this.map = map;
 	}
-	
+
 	public NestedBean getNested() {
 		return nested;
 	}
-	
+
 	public void setNested(NestedBean nested) {
 		this.nested = nested;
 	}
-	
-    public String toString() {
+
+	public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("JavaBean");
         if (primitive != null) {

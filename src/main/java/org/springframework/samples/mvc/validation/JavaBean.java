@@ -23,16 +23,17 @@ public class JavaBean {
 	public Integer getNumber() {
 		return number;
 	}
-	
+
 	public void setNumber(Integer number) {
 		this.number = number;
 	}
-	
+
 	public Date getDate() {
 		return date;
 	}
-	
+
 	public void setDate(Date date) {
 		this.date = date;
 	}
+
 }

@@ -24,13 +24,17 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
-	<!-- Imports user-defined @Controller beans that process client requests -->
-	<beans:import resource="controllers.xml" />
-
 	<!-- Only needed because we install custom converters to support the examples in the org.springframewok.samples.mvc.convert package -->
-	<beans:bean id="conversionService" class="org.springframework.samples.mvc.convert.CustomConversionServiceFactoryBean" />
+	<beans:bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+		<beans:property name="formatters">
+			<beans:bean class="org.springframework.samples.mvc.convert.MaskFormatAnnotationFormatterFactory" />
+		</beans:property>
+	</beans:bean>
 
 	<!-- Only needed because we require fileupload in the org.springframework.samples.mvc.fileupload package -->
 	<beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />
+
+	<!-- Imports user-defined @Controller beans that process client requests -->
+	<beans:import resource="controllers.xml" />
 	
 </beans:beans>

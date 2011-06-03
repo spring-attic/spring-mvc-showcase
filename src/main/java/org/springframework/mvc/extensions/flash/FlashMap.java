@@ -1,4 +1,4 @@
-package org.springframework.samples.mvc.flash;
+package org.springframework.mvc.extensions.flash;
 
 import java.util.HashMap;
 import java.util.Map;

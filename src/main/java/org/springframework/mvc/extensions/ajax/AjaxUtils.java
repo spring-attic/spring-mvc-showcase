@@ -1,4 +1,4 @@
-package org.springframework.samples.mvc;
+package org.springframework.mvc.extensions.ajax;
 
 import javax.servlet.http.HttpServletRequest;
 

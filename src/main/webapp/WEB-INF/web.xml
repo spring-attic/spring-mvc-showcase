@@ -16,10 +16,10 @@
 
 	<!-- Allows attributes to be accessed on the next request (typically success messages) -->
 	<!-- Note: this is a sample-specific implementation of the FlashMap concept -->
-	<!-- Official flash map support is planned for Spring 3.1 -->
+	<!-- Official flash map support is planned for a future release of Spring MVC -->
 	<filter>
 		<filter-name>flashMapFilter</filter-name>
-		<filter-class>org.springframework.samples.mvc.flash.FlashMapFilter</filter-class>
+		<filter-class>org.springframework.mvc.extensions.flash.FlashMapFilter</filter-class>
 	</filter>
 		
     <filter-mapping>
