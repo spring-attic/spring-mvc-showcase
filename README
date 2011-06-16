@@ -18,13 +18,24 @@ In this showcase you'll see the following in action:
 - File Upload
 - Exception Handling
 
-To run:
+To get the code:
 -------------------
-From the command line:	
-$ mvn clean install tomcat:run
+Clone the repository:
+$ git clone git://github.com/SpringSource/spring-mvc-showcase.git
 
-In SpringSource Tool Suite (STS):
-Simply import as a Maven Project into STS and drag-n-drop the project onto the "SpringSource tc Server Developer Edition" or another Servlet 2.5 or > Server to run.
+If this is your first time using Github, review http://help.github.com to learn the basics.
+
+To run the application:
+-------------------	
+From the command line with Maven:
+$ cd spring-mvc-showcase
+$ mvn tomcat:run
+
+or
+
+In your preferred IDE such as SpringSource Tool Suite (STS) or IDEA:
+- Import spring-mvc-showcase as a Maven Project into STS
+- Drag-n-drop the project onto the "SpringSource tc Server Developer Edition" or another Servlet 2.5 or > Server to run.
 
 Access the deployed web application at: http://localhost:8080/mvc-showcase/
 
