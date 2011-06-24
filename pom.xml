@@ -3,8 +3,8 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.springframework.samples</groupId>
-	<artifactId>mvc-showcase</artifactId>
-	<name>mvc-showcase</name>
+	<artifactId>spring-mvc-showcase</artifactId>
+	<name>spring-mvc-showcase</name>
 	<packaging>war</packaging>
 	<version>1.0.0-BUILD-SNAPSHOT</version>
 	<properties>
@@ -85,8 +85,13 @@
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>jstl</artifactId>
+			<groupId>javax.servlet.jsp.jstl</groupId>
+			<artifactId>jstl-api</artifactId>
+			<version>1.2</version>
+		</dependency>		
+		<dependency>
+			<groupId>org.glassfish.web</groupId>
+			<artifactId>jstl-impl</artifactId>
 			<version>1.2</version>
 		</dependency>
 
@@ -99,9 +104,9 @@
 
 		<!-- Rome Atom+RSS -->
 		<dependency>
-			<groupId>rome</groupId>
+			<groupId>net.java.dev.rome</groupId>
 			<artifactId>rome</artifactId>
-			<version>1.0</version>
+			<version>1.0.0</version>
 		</dependency>
 		
 		<!-- JSR 303 with Hibernate Validator -->
@@ -160,20 +165,6 @@
 			<url>http://maven.springframework.org/milestone</url>
 			<snapshots><enabled>false</enabled></snapshots>
 		</repository>
-		<!-- For Hibernate Validator -->
-		<repository>
-			<id>org.jboss.repository.releases</id>
-			<name>JBoss Maven Release Repository</name>			
-			<url>https://repository.jboss.org/nexus/content/repositories/releases</url>
-			<snapshots><enabled>false</enabled></snapshots>			
-		</repository>		
-		<!-- For Rome -->
-		<repository>
-			<id>maven2-repository.dev.java.net</id>
-			<name>Java.net Repository for Maven</name>
-			<url>http://download.java.net/maven/2/</url>
-			<snapshots><enabled>false</enabled></snapshots>			
-		</repository>		
 	</repositories>
 	<build>
 		<plugins>
