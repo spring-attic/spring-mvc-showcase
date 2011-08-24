@@ -7,7 +7,7 @@
 	<link href="<c:url value="/resources/jqueryui/1.8/themes/base/jquery.ui.all.css" />" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-<h1>spring-mvc-showcase</h1>
+<h1><a href="<c:url value="/"/>">spring-mvc-showcase</a></h1>
 <p>Recommended: Using a Web Developer tool such a Firebug to inspect the client/server interaction</p>
 <div id="tabs">
 	<ul>
