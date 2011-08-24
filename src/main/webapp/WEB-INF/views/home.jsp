@@ -47,6 +47,9 @@
 				<a id="byPath" class="textLink" href="<c:url value="/mapping/path" />">By path</a>
 			</li>
 			<li>
+				<a id="byPathPattern" class="textLink" href="<c:url value="/mapping/path/wildcard" />">By path pattern</a>
+			</li>
+			<li>
 				<a id="byMethod" class="textLink" href="<c:url value="/mapping/method" />">By path and method</a>
 			</li>
 			<li>
@@ -56,14 +59,19 @@
 				<a id="byNotParameter" class="textLink" href="<c:url value="/mapping/parameter" />">By path, method, and not presence of parameter</a>
 			</li>
 			<li>
-				<a id="byHeader" class="textLink" href="<c:url value="/mapping/header" />">By presence of header</a>
+				<a id="byHeader" href="<c:url value="/mapping/header" />">By presence of header</a>
 			</li>
 			<li>
-				<a id="byHeaderNegation" class="textLink" href="<c:url value="/mapping/notheader" />">By not presence of header</a>			
-			</li>		
+				<a id="byHeaderNegation" class="textLink" href="<c:url value="/mapping/header" />">By absence of header</a>
+			</li>
 			<li>
-				<a id="byWildcard" class="textLink" href="<c:url value="/mapping/wildcard" />">By regexp</a>
-			</li>		
+				<form id="byConsumes" class="readJsonForm" action="<c:url value="/mapping/consumes" />" method="post">
+					<input id="byConsumesSubmit" type="submit" value="By consumes" />
+				</form>
+			</li>
+			<li>
+				<a id="byProduces" class="writeJsonLink" href="<c:url value="/mapping/produces" />">By produces</a>
+			</li>
 		</ul>
 	</div>
 	<div id="data">
@@ -85,13 +93,13 @@
 				<a id="header" class="textLink" href="<c:url value="/data/header" />">Header</a>
 			</li>
 			<li>
-				<form class="textForm" action="<c:url value="/data/body" />" method="post">
-					<input id="requestBody" type="submit" value="Request Body" />
+				<form id="requestBody" class="textForm" action="<c:url value="/data/body" />" method="post">
+					<input id="requestBodySubmit" type="submit" value="Request Body" />
 				</form>
 			</li>				
 			<li>
-				<form class="textForm" action="<c:url value="/data/entity" />" method="post">
-					<input id="requestBodyAndHeaders" type="submit" value="Request Body and Headers" />
+				<form id="requestBodyAndHeaders" class="textForm" action="<c:url value="/data/entity" />" method="post">
+					<input id="requestBodyAndHeadersSubmit" type="submit" value="Request Body and Headers" />
 				</form>
 			</li>
 		</ul>	
@@ -102,13 +110,13 @@
 					<a id="request" class="textLink" href="<c:url value="/data/standard/request" />">Request arguments</a>				
 				</li>
 				<li>
-					<form class="textForm" action="<c:url value="/data/standard/request/reader" />" method="post">
-						<input id="requestReader" type="submit" value="Request Reader" />		
+					<form id="requestReader" class="textForm" action="<c:url value="/data/standard/request/reader" />" method="post">
+						<input id="requestReaderSubmit" type="submit" value="Request Reader" />
 					</form>
 				</li>			
 				<li>
-					<form class="textForm" action="<c:url value="/data/standard/request/is" />" method="post">
-						<input id="requestIs" type="submit" value="Request InputStream" />		
+					<form id="requestIs" class="textForm" action="<c:url value="/data/standard/request/is" />" method="post">
+						<input id="requestIsSubmit" type="submit" value="Request InputStream" />
 					</form>
 				</li>
 				<li>
@@ -161,7 +169,7 @@
 			<ul>
 				<li>
 					<form id="readString" class="textForm" action="<c:url value="/messageconverters/string" />" method="post">
-						<input type="submit" value="Read a String" />		
+						<input id="readStringSubmit" type="submit" value="Read a String" />
 					</form>
 				</li>
 				<li>
@@ -182,23 +190,23 @@
 			<h3>Jaxb2RootElementHttpMessageConverter</h3>
 			<ul>
 				<li>
-					<form id="readXml" action="<c:url value="/messageconverters/xml" />" method="post">
+					<form id="readXml" class="readXmlForm" action="<c:url value="/messageconverters/xml" />" method="post">
 						<input id="readXmlSubmit" type="submit" value="Read XML" />		
 					</form>
 				</li>
 				<li>
-					<a id="writeXml" href="<c:url value="/messageconverters/xml" />">Write XML</a>
+					<a id="writeXml" class="writeXmlLink" href="<c:url value="/messageconverters/xml" />">Write XML</a>
 				</li>
 			</ul>
 			<h3>MappingJacksonHttpMessageConverter</h3>
 			<ul>
 				<li>
-					<form id="readJson" action="<c:url value="/messageconverters/json" />" method="post">
+					<form id="readJson" class="readJsonForm" action="<c:url value="/messageconverters/json" />" method="post">
 						<input id="readJsonSubmit" type="submit" value="Read JSON" />	
 					</form>
 				</li>
 				<li>
-					<a id="writeJson" href="<c:url value="/messageconverters/json" />">Write JSON</a>
+					<a id="writeJson" class="writeJsonLink" href="<c:url value="/messageconverters/json" />">Write JSON</a>
 				</li>
 			</ul>
 			<h3>AtomFeedHttpMessageConverter</h3>
@@ -391,14 +399,14 @@ $(document).ready(function() {
 		return false;
 	});
 
-	$("#readXml").submit(function() {
+	$("form[class=readXmlForm]").submit(function() {
 		var form = $(this);
 		var button = form.children(":first");
 		$.ajax({ type: "POST", url: form.attr("action"), data: "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><javaBean><foo>bar</foo><fruit>apple</fruit></javaBean>", contentType: "application/xml", dataType: "text", success: function(text) { MvcUtil.showSuccessResponse(text, button); }, error: function(xhr) { MvcUtil.showErrorResponse(xhr.responseText, button); }});
 		return false;
 	});
 
-	$("#writeXml").click(function() {
+	$("a[class=writeXmlLink]").click(function() {
 		var link = $(this);
 		$.ajax({ url: link.attr("href"),
 			beforeSend: function(req) { 
@@ -414,14 +422,14 @@ $(document).ready(function() {
 		return false;
 	});					
 
-	$("#readJson").submit(function() {
+	$("form[class=readJsonForm]").submit(function() {
 		var form = $(this);
 		var button = form.children(":first");	
 		$.ajax({ type: "POST", url: form.attr("action"), data: "{ \"foo\": \"bar\", \"fruit\": \"apple\" }", contentType: "application/json", dataType: "text", success: function(text) { MvcUtil.showSuccessResponse(text, button); }, error: function(xhr) { MvcUtil.showErrorResponse(xhr.responseText, button); }});
 		return false;
 	});
 
-	$("#writeJson").click(function() {
+	$("a[class=writeJsonLink]").click(function() {
 		var link = $(this);
 		$.ajax({ url: this.href, dataType: "json", success: function(json) { MvcUtil.showSuccessResponse(JSON.stringify(json), link); }, error: function(xhr) { MvcUtil.showErrorResponse(xhr.responseText, link); }});					
 		return false;
@@ -470,6 +478,12 @@ $(document).ready(function() {
 				MvcUtil.showErrorResponse(xhr.responseText, link);
 			}
 		});
+		return false;
+	});
+
+	$("#byHeader").click(function(){
+		var link = $(this);
+		$.ajax({ url: this.href, dataType: "text", beforeSend: function(req) { req.setRequestHeader("FooHeader", "foo"); }, success: function(form) { MvcUtil.showSuccessResponse(form, link); }, error: function(xhr) { MvcUtil.showErrorResponse(xhr.responseText, link); }});
 		return false;
 	});
 
