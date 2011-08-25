@@ -1,10 +1,14 @@
-package org.springframework.samples.mvc.mapping;
+package org.springframework.samples.mvc.views;
+
+import javax.validation.constraints.NotNull;
 
 public class JavaBean {
 	
-	private String foo = "bar";
+	@NotNull
+	private String foo;
 
-	private String fruit = "apple";
+	@NotNull
+	private String fruit;
 
 	public String getFoo() {
 		return foo;

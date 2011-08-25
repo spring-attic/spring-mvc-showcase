@@ -248,6 +248,16 @@
 				<a href="<c:url value="/views/viewName" />">DefaultRequestToViewNameTranslator convention</a>
 			</li>
 		</ul>	
+		<ul>
+			<li>
+				<a href="<c:url value="/views/pathVars/bar/apple" />">@PathVariables in the model when rendering</a>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="<c:url value="/views/dataBinding/bar/apple" />">Data binding with URI variables</a>
+			</li>
+		</ul>
 	</div>
 	<div id="convert">
 		<h2>Type Conversion</h2>
