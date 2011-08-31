@@ -1,8 +1,11 @@
 package org.springframework.samples.mvc.messageconverters;
 
+import javax.validation.Valid;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -27,11 +30,11 @@ public class MessageConvertersController {
 		return "Wrote a string";
 	}
 
-	// FormHttpMessageConverter (note: not recommended for reading browser form posts.  Use standard JavaBean form binding instead. see 'form' showcase/package).
+	// Form encoded data (application/x-www-form-urlencoded)
 	
 	@RequestMapping(value="/form", method=RequestMethod.POST)
-	public @ResponseBody String readForm(@RequestBody MultiValueMap<String, String> form) {
-		return "Read form map " + form;
+	public @ResponseBody String readForm(@ModelAttribute JavaBean bean) {
+		return "Read x-www-form-urlencoded: " + bean;
 	}
 	
 	@RequestMapping(value="/form", method=RequestMethod.GET)
@@ -46,24 +49,24 @@ public class MessageConvertersController {
 	
 	@RequestMapping(value="/xml", method=RequestMethod.POST)
 	public @ResponseBody String readXml(@RequestBody JavaBean bean) {
-		return "Read from XML " + bean;
+		return "Read from XML: " + bean;
 	}
 	
 	@RequestMapping(value="/xml", method=RequestMethod.GET)
 	public @ResponseBody JavaBean writeXml() {
-		return new JavaBean();
+		return new JavaBean("bar", "fruit");
 	}
 
 	// MappingJacksonHttpMessageConverter (requires Jackson on the classpath - particularly useful for serving JavaScript clients that expect to work with JSON)
 	
 	@RequestMapping(value="/json", method=RequestMethod.POST)
-	public @ResponseBody String readJson(@RequestBody JavaBean bean) {
-		return "Read from JSON " + bean;
+	public @ResponseBody String readJson(@Valid @RequestBody JavaBean bean) {
+		return "Read from JSON: " + bean;
 	}
 	
 	@RequestMapping(value="/json", method=RequestMethod.GET)
 	public @ResponseBody JavaBean writeJson() {
-		return new JavaBean();
+		return new JavaBean("bar", "fruit");
 	}
 
 	// AtomFeedHttpMessageConverter (requires Rome on the classpath - useful for serving Atom feeds)

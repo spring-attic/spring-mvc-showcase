@@ -180,11 +180,11 @@
 			<ul>
 				<li>
 					<form id="readForm" action="<c:url value="/messageconverters/form" />" method="post">
-						<input id="readFormSubmit" type="submit" value="Read a Form" />		
+						<input id="readFormSubmit" type="submit" value="Read Form Data" />		
 					</form>
 				</li>
 				<li>
-					<a id="writeForm" href="<c:url value="/messageconverters/form" />">Write a Form</a>
+					<a id="writeForm" href="<c:url value="/messageconverters/form" />">Write Form Data</a>
 				</li>
 			</ul>
 			<h3>Jaxb2RootElementHttpMessageConverter</h3>
@@ -203,6 +203,11 @@
 				<li>
 					<form id="readJson" class="readJsonForm" action="<c:url value="/messageconverters/json" />" method="post">
 						<input id="readJsonSubmit" type="submit" value="Read JSON" />	
+					</form>
+				</li>
+				<li>
+					<form id="readJsonInvalid" class="readJsonForm invalid" action="<c:url value="/messageconverters/json" />" method="post">
+						<input id="readInvalidJsonSubmit" type="submit" value="Read JSON (Validation Error)" />	
 					</form>
 				</li>
 				<li>
@@ -250,7 +255,7 @@
 		</ul>	
 		<ul>
 			<li>
-				<a href="<c:url value="/views/pathVars/bar/apple" />">@PathVariables in the model when rendering</a>
+				<a href="<c:url value="/views/pathVars/bar/apple" />">Using path variables in a view template</a>
 			</li>
 		</ul>
 		<ul>
@@ -383,13 +388,13 @@
 $(document).ready(function() {
 	$("#tabs").tabs();
 
-	$("a[class=textLink]").click(function(){
+	$("a.textLink").click(function(){
 		var link = $(this);
 		$.ajax({ url: link.attr("href"), dataType: "text", success: function(text) { MvcUtil.showSuccessResponse(text, link); }, error: function(xhr) { MvcUtil.showErrorResponse(xhr.responseText, link); }});
 		return false;
 	});
 	
-	$("form[class=textForm]").submit(function(event) {
+	$("form.textForm").submit(function(event) {
 		var form = $(this);
 		var button = form.children(":first");
 		$.ajax({ type: "POST", url: form.attr("action"), data: "foo", contentType: "text/plain", dataType: "text", success: function(text) { MvcUtil.showSuccessResponse(text, button); }, error: function(xhr) { MvcUtil.showErrorResponse(xhr.responseText, button); }});
@@ -409,14 +414,14 @@ $(document).ready(function() {
 		return false;
 	});
 
-	$("form[class=readXmlForm]").submit(function() {
+	$("form.readXmlForm").submit(function() {
 		var form = $(this);
 		var button = form.children(":first");
 		$.ajax({ type: "POST", url: form.attr("action"), data: "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><javaBean><foo>bar</foo><fruit>apple</fruit></javaBean>", contentType: "application/xml", dataType: "text", success: function(text) { MvcUtil.showSuccessResponse(text, button); }, error: function(xhr) { MvcUtil.showErrorResponse(xhr.responseText, button); }});
 		return false;
 	});
 
-	$("a[class=writeXmlLink]").click(function() {
+	$("a.writeXmlLink").click(function() {
 		var link = $(this);
 		$.ajax({ url: link.attr("href"),
 			beforeSend: function(req) { 
@@ -432,14 +437,17 @@ $(document).ready(function() {
 		return false;
 	});					
 
-	$("form[class=readJsonForm]").submit(function() {
+	$("form.readJsonForm").submit(function() {
 		var form = $(this);
-		var button = form.children(":first");	
-		$.ajax({ type: "POST", url: form.attr("action"), data: "{ \"foo\": \"bar\", \"fruit\": \"apple\" }", contentType: "application/json", dataType: "text", success: function(text) { MvcUtil.showSuccessResponse(text, button); }, error: function(xhr) { MvcUtil.showErrorResponse(xhr.responseText, button); }});
+		var button = form.children(":first");
+		var data = form.hasClass("invalid") ?
+				"{ \"foo\": \"bar\" }" : 
+				"{ \"foo\": \"bar\", \"fruit\": \"apple\" }";
+		$.ajax({ type: "POST", url: form.attr("action"), data: data, contentType: "application/json", dataType: "text", success: function(text) { MvcUtil.showSuccessResponse(text, button); }, error: function(xhr) { MvcUtil.showErrorResponse(xhr.responseText, button); }});
 		return false;
 	});
 
-	$("a[class=writeJsonLink]").click(function() {
+	$("a.writeJsonLink").click(function() {
 		var link = $(this);
 		$.ajax({ url: this.href, dataType: "json", success: function(json) { MvcUtil.showSuccessResponse(JSON.stringify(json), link); }, error: function(xhr) { MvcUtil.showErrorResponse(xhr.responseText, link); }});					
 		return false;
