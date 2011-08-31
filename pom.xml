@@ -226,7 +226,17 @@
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>tomcat-maven-plugin</artifactId>
 				<version>1.1</version>
-			</plugin>	
+			</plugin>
+            <plugin>
+                <!-- simple call mvn jetty:run and request to "http://localhost:8080/spring-mvc-showcase/" to test -->
+                <groupId>org.mortbay.jetty</groupId>
+                <artifactId>maven-jetty-plugin</artifactId>
+                <version>6.1.10</version>
+                <configuration>
+                    <stopPort>9966</stopPort>
+                    <stopKey>foo</stopKey>
+                </configuration>
+            </plugin>
 		</plugins>
 	</build>
 </project>
