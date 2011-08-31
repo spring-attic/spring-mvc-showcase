@@ -26,11 +26,11 @@
 	
 	<!-- Only needed because we install custom converters to support the examples in the org.springframewok.samples.mvc.convert package -->
 	<beans:bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
-		<beans:property name="formatters">
+        <beans:property name="formatters">
             <beans:set>
-			    <beans:bean class="org.springframework.samples.mvc.convert.MaskFormatAnnotationFormatterFactory" />
+                <beans:bean class="org.springframework.samples.mvc.convert.MaskFormatAnnotationFormatterFactory"/>
             </beans:set>
-		</beans:property>
+        </beans:property>
 	</beans:bean>
 
 	<!-- Only needed because we require fileupload in the org.springframework.samples.mvc.fileupload package -->
