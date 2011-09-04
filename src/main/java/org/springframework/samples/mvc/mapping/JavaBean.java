@@ -1,5 +1,8 @@
 package org.springframework.samples.mvc.mapping;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
 public class JavaBean {
 	
 	private String foo = "bar";
@@ -22,4 +25,8 @@ public class JavaBean {
 		this.fruit = fruit;
 	}
 
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);
+    }
 }
