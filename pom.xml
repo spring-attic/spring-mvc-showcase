@@ -84,6 +84,7 @@
 			<version>2.1</version>
 			<scope>provided</scope>
 		</dependency>
+		<!-- problem with mvn tomcat:run
 		<dependency>
 			<groupId>javax.servlet.jsp.jstl</groupId>
 			<artifactId>jstl-api</artifactId>
@@ -94,6 +95,12 @@
 			<artifactId>jstl-impl</artifactId>
 			<version>1.2</version>
 		</dependency>
+		-->
+		<dependency>
+        	<groupId>javax.servlet</groupId>
+        	<artifactId>jstl</artifactId>
+        	<version>1.2</version>
+    	</dependency>		
 
 		<!-- Jackson JSON Processor -->
 		<dependency>
