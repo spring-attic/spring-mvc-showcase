@@ -56,7 +56,7 @@
 				<a id="byParameter" class="textLink" href="<c:url value="/mapping/parameter?foo=bar" />">By path, method, and presence of parameter</a>
 			</li>
 			<li>
-				<a id="byNotParameter" class="textLink" href="<c:url value="/mapping/parameter" />">By path, method, and not presence of parameter</a>
+				<a id="byNotParameter" class="textLink" href="<c:url value="/mapping/parameter" />">By path, method, and absence of parameter</a>
 			</li>
 			<li>
 				<a id="byHeader" href="<c:url value="/mapping/header" />">By presence of header</a>
@@ -66,11 +66,11 @@
 			</li>
 			<li>
 				<form id="byConsumes" class="readJsonForm" action="<c:url value="/mapping/consumes" />" method="post">
-					<input id="byConsumesSubmit" type="submit" value="By consumes" />
+					<input id="byConsumesSubmit" type="submit" value="By consumes JSON" />
 				</form>
 			</li>
 			<li>
-				<a id="byProduces" class="writeJsonLink" href="<c:url value="/mapping/produces" />">By produces</a>
+				<a id="byProduces" class="writeJsonLink" href="<c:url value="/mapping/produces" />">By produces JSON</a>
 			</li>
 		</ul>
 	</div>
