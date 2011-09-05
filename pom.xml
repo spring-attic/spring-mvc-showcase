@@ -247,14 +247,14 @@
 				<version>1.1</version>
 			</plugin>
             <plugin>
-                <!-- simple call mvn jetty:run and request to "http://localhost:8080/spring-mvc-showcase/" to test -->
+                <!--
+                Simple call "mvn jetty:run" and request to "http://localhost:8080/" to run the webapp in a browser.
+                Enable remote debugging (socket attach :5005) by executing the following before you call jetty:run:
+
+                export MAVEN_OPTS="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005"
+                -->
                 <groupId>org.mortbay.jetty</groupId>
-                <artifactId>maven-jetty-plugin</artifactId>
-                <version>6.1.10</version>
-                <configuration>
-                    <stopPort>9966</stopPort>
-                    <stopKey>foo</stopKey>
-                </configuration>
+                <artifactId>jetty-maven-plugin</artifactId>
             </plugin>
 		</plugins>
 	</build>
