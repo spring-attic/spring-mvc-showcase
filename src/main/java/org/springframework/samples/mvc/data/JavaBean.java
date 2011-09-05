@@ -1,5 +1,8 @@
 package org.springframework.samples.mvc.data;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
 public class JavaBean {
 
 	private String param1;
@@ -32,4 +35,8 @@ public class JavaBean {
 		this.param3 = param3;
 	}
 
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);
+    }
 }

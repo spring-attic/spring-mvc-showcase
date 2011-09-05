@@ -1,5 +1,8 @@
 package org.springframework.samples.mvc.convert;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
 import java.util.List;
 import java.util.Map;
 
@@ -35,18 +38,8 @@ public class NestedBean {
 		this.map = map;
 	}
 
-	public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("NestedBean");
-        if (foo != null) {
-        	sb.append(" foo=").append(foo);
-        }
-        if (list != null) {
-        	sb.append(" list=").append(list);
-        }
-        if (map != null) {
-        	sb.append(" map=").append(map);
-        }
-        return sb.toString();
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);
     }
 }

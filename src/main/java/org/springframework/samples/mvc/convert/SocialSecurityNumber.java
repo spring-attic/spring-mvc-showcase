@@ -1,5 +1,8 @@
 package org.springframework.samples.mvc.convert;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
 public final class SocialSecurityNumber {
 
 	private final String value;
@@ -16,5 +19,9 @@ public final class SocialSecurityNumber {
 	public static SocialSecurityNumber valueOf(@MaskFormat("###-##-####") String value) {
 		return new SocialSecurityNumber(value);
 	}
-	
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);
+    }
 }

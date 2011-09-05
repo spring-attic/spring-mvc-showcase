@@ -4,13 +4,15 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
 
 public class JavaBean {
-	
+
 	private Integer primitive;
-	
+
 	@DateTimeFormat(iso=ISO.DATE)
 	private Date date;
 
@@ -86,29 +88,29 @@ public class JavaBean {
 		this.nested = nested;
 	}
 
-	public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("JavaBean");
+    @Override
+    public String toString() {
+        ToStringBuilder sb = new ToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE);
         if (primitive != null) {
-        	sb.append(" primitive=").append(primitive);
+            sb.append("primitive", primitive);
         }
         if (date != null) {
-            sb.append(" date=").append(date);        	
+            sb.append("date", date);
         }
         if (masked != null) {
-        	sb.append(" masked=").append(masked);
+            sb.append("masked", masked);
         }
         if (list != null) {
-            sb.append(" list=").append(list);        	
+            sb.append("list", list);
         }
         if (formattedList != null) {
-            sb.append(" formattedList=").append(formattedList);        	
+            sb.append("formattedList", formattedList);
         }
         if (map != null) {
-            sb.append(" map=").append(map);       	
+            sb.append("map", map);
         }
-        if (nested != null) {        	
-            sb.append(" nested=").append(nested);
+        if (nested != null) {
+            sb.append("nested", nested);
         }
         return sb.toString();
     }

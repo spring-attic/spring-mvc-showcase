@@ -23,37 +23,36 @@ public class MappingController {
 
 	@RequestMapping(value="/mapping/method", method=RequestMethod.GET)
 	public @ResponseBody String byMethod() {
-		return "Mapped by path + method";
+		return "Mapped by path + GET";
 	}
 
 	@RequestMapping(value="/mapping/parameter", method=RequestMethod.GET, params="foo")
 	public @ResponseBody String byParameter() {
-		return "Mapped by path + method + presence of query parameter!";
+		return "Mapped by path + GET + presence of query parameter!";
 	}
 
 	@RequestMapping(value="/mapping/parameter", method=RequestMethod.GET, params="!foo")
 	public @ResponseBody String byParameterNegation() {
-		return "Mapped by path + method + not presence of query parameter!";
+		return "Mapped by path + GET + absence of query parameter!";
 	}
 
 	@RequestMapping(value="/mapping/header", method=RequestMethod.GET, headers="FooHeader=foo")
 	public @ResponseBody String byHeader() {
-		return "Mapped by path + method + presence of header!";
+		return "Mapped by path + GET + presence of header!";
 	}
 
 	@RequestMapping(value="/mapping/header", method=RequestMethod.GET, headers="!FooHeader")
 	public @ResponseBody String byHeaderNegation() {
-		return "Mapped by path + method + absence of header!";
+		return "Mapped by path + GET + absence of header!";
 	}
 
 	@RequestMapping(value="/mapping/consumes", method=RequestMethod.POST, consumes="application/json")
 	public @ResponseBody String byConsumes(@RequestBody JavaBean javaBean) {
-		return "Mapped by path + method + consumable media type (javaBean '" + javaBean + "')";
+		return "Mapped by path + POST + consumable " + javaBean;
 	}
 
 	@RequestMapping(value="/mapping/produces", method=RequestMethod.GET, produces="application/json")
 	public @ResponseBody JavaBean byProduces() {
 		return new JavaBean();
 	}
-
 }
