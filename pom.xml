@@ -265,6 +265,8 @@
                 -->
                 <groupId>org.mortbay.jetty</groupId>
                 <artifactId>jetty-maven-plugin</artifactId>
+                <!-- http://search.maven.org/#browse%7C-732709706 -->
+                <version>8.0.1.v20110908</version>
             </plugin>
         </plugins>
     </build>
