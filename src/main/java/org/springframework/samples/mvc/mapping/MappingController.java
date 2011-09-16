@@ -51,6 +51,11 @@ public class MappingController {
 		return "Mapped by path + POST + consumable " + javaBean;
 	}
 
+    @RequestMapping(value="/mapping/consumes2", method=RequestMethod.GET)
+	public @ResponseBody String byConsumes2(JavaBean javaBean) {
+		return "Mapped by path + GET + consumable " + javaBean;
+	}
+
 	@RequestMapping(value="/mapping/produces", method=RequestMethod.GET, produces="application/json")
 	public @ResponseBody JavaBean byProduces() {
 		return new JavaBean();

@@ -69,6 +69,9 @@
 					<input id="byConsumesSubmit" type="submit" value="By consumes JSON" />
 				</form>
 			</li>
+            <li>
+				<a id="byConsumes2" class="textLink" href="<c:url value="/mapping/consumes2?foo=json&fruit=cherry"/>">By consumes JSON - GET</a>
+			</li>
 			<li>
 				<a id="byProduces" class="writeJsonLink" href="<c:url value="/mapping/produces" />">By produces JSON</a>
 			</li>
