@@ -17,6 +17,16 @@ public class ResponseController {
 		return "The String ResponseBody";
 	}
 
+	@RequestMapping(value="/response/charset/accept", method=RequestMethod.GET)
+	public @ResponseBody String responseAcceptHeaderCharset() {
+		return "こんにちは世界！ (\"Hello world!\" in Japanese)";
+	}
+
+	@RequestMapping(value="/response/charset/produce", method=RequestMethod.GET, produces="text/plain;charset=UTF-8")
+	public @ResponseBody String responseProducesConditionCharset() {
+		return "こんにちは世界！ (\"Hello world!\" in Japanese)";
+	}
+
 	@RequestMapping(value="/response/entity/status", method=RequestMethod.GET)
 	public ResponseEntity<String> responseEntityStatusCode() {
 		return new ResponseEntity<String>("The String ResponseBody with custom status code (403 Forbidden)",
