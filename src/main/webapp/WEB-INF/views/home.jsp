@@ -3,8 +3,9 @@
 <html>
 <head>
 	<title>spring-mvc-showcase</title>
-	<link href="<c:url value="/resources/form.css" />" rel="stylesheet"  type="text/css" />		
-	<link href="<c:url value="/resources/jqueryui/1.8/themes/base/jquery.ui.all.css" />" rel="stylesheet" type="text/css"/>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+	<link href="<c:url value="/resources/form.css" />" rel="stylesheet"  type="text/css" charset="UTF-8" />
+	<link href="<c:url value="/resources/jqueryui/1.8/themes/base/jquery.ui.all.css" />" rel="stylesheet" type="text/css" charset="UTF-8"/>
 </head>
 <body>
 <h1><a href="<c:url value="/"/>">spring-mvc-showcase</a></h1>
@@ -153,6 +154,12 @@
 		<ul>
 			<li>
 				<a id="responseBody" class="textLink" href="<c:url value="/response/annotation" />">@ResponseBody</a>			
+			</li>
+			<li>
+				<a id="responseCharsetAccept" class="utf8TextLink" href="<c:url value="/response/charset/accept" />">@ResponseBody (UTF-8 charset requested)</a>
+			</li>
+			<li>
+				<a id="responseCharsetProduce" class="textLink" href="<c:url value="/response/charset/produce" />">@ResponseBody (UTF-8 charset produced)</a>
 			</li>
 			<li>
 				<a id="responseEntityStatus" class="textLink" href="<c:url value="/response/entity/status" />">ResponseEntity (custom status)</a>			
