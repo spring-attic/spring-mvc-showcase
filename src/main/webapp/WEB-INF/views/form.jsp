@@ -11,7 +11,7 @@
 </head>
 <body>
 </c:if>
-	<div id="forms">
+	<div id="formsContent">
 		<h2>Forms</h2>
 		<p>
 			See the <code>org.springframework.samples.mvc.form</code> package for the @Controller code	
@@ -97,7 +97,7 @@
 			$(document).ready(function() {
 				$("#form").submit(function() {  
 					$.post($(this).attr("action"), $(this).serialize(), function(html) {
-						$("#forms").replaceWith(html);
+						$("#formsContent").replaceWith(html);
 						$('html, body').animate({ scrollTop: $("#message").offset().top }, 500);
 					});
 					return false;  

@@ -9,7 +9,7 @@
 </head>
 <body>
 </c:if>
-	<div id="fileupload">
+	<div id="fileuploadContent">
 		<h2>File Upload</h2>
 		<p>
 			See the <code>org.springframework.samples.mvc.fileupload</code> package for the @Controller code	
@@ -29,7 +29,7 @@
 			$(document).ready(function() {
 				$('<input type="hidden" name="ajaxUpload" value="true" />').insertAfter($("#file"));
 				$("#fileuploadForm").ajaxForm({ success: function(html) {
-						$("#fileupload").replaceWith(html);
+						$("#fileuploadContent").replaceWith(html);
 					}
 				});
 			});

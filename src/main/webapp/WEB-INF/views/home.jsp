@@ -19,8 +19,8 @@
 		<li><a href="#views">Rendering Views</a></li>
 		<li><a href="#convert">Type Conversion</a></li>
 		<li><a href="#validation">Validation</a></li>
-		<li><a href="<c:url value="/form" />">Forms</a></li>
-		<li><a href="<c:url value="/fileupload" />">File Upload</a></li>
+		<li><a href="<c:url value="/form" />" title="forms">Forms</a></li>
+		<li><a href="<c:url value="/fileupload" />" title="fileupload">File Upload</a></li>
 		<li><a href="#exceptions">Exception Handling</a></li>
     </ul>
     <div id="simple">
@@ -213,7 +213,7 @@
 				</li>
 				<li>
 					<form id="readJsonInvalid" class="readJsonForm invalid" action="<c:url value="/messageconverters/json" />" method="post">
-						<input id="readInvalidJsonSubmit" type="submit" value="Read JSON (Validation Error)" />	
+						<input id="readInvalidJsonSubmit" type="submit" value="Read invalid JSON (400 response code)" />	
 					</form>
 				</li>
 				<li>
@@ -393,6 +393,15 @@
 <script type="text/javascript">
 $(document).ready(function() {
 	$("#tabs").tabs();
+
+	// Append '#' to the window location so "Back" returns to the selected tab
+	// after a redirect or a full page refresh (e.g. Views tab).
+
+	// However, note this general disclaimer about going back to previous tabs: 
+	// http://docs.jquery.com/UI/API/1.8/Tabs#Back_button_and_bookmarking
+
+	$("#tabs").bind("tabsselect", function(event, ui) { window.location.hash = ui.tab.hash; });
+
 
 	$("a.textLink").click(function(){
 		var link = $(this);
