@@ -7,7 +7,7 @@
 	<link href="<c:url value="/resources/jqueryui/1.8/themes/base/jquery.ui.all.css" />" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-<h1>spring-mvc-showcase</h1>
+<h1><a href="<c:url value="/" />">spring-mvc-showcase</a></h1>
 <p>Recommended: Using a Web Developer tool such a Firebug to inspect the client/server interaction</p>
 <div id="tabs">
 	<ul>
@@ -22,6 +22,7 @@
 		<li><a href="<c:url value="/form" />" title="forms">Forms</a></li>
 		<li><a href="<c:url value="/fileupload" />" title="fileupload">File Upload</a></li>
 		<li><a href="#exceptions">Exception Handling</a></li>
+		<li><a href="#redirect">Redirecting</a></li>
     </ul>
     <div id="simple">
 		<h2>Simple</h2>
@@ -261,7 +262,7 @@
 		</ul>	
 		<ul>
 			<li>
-				<a href="<c:url value="/views/pathVars/bar/apple" />">Using path variables in a view template</a>
+				<a href="<c:url value="/views/pathVariables/bar/apple" />">Using path variables in a view template</a>
 			</li>
 		</ul>
 		<ul>
@@ -347,6 +348,20 @@
 		<ul>
 			<li>
 				<a id="exception" class="textLink" href="<c:url value="/exception" />">@Controller Exception handling</a>
+			</li>
+		</ul>
+	</div>
+	<div id="redirect">
+		<h2>Redirecting</h2>
+		<p>
+			See the <code>org.springframework.samples.mvc.redirect</code> package for the @Controller code	
+		</p>
+		<ul>
+			<li>
+				<a href="<c:url value="/redirect/uriTemplate" />">URI Template String</a>
+			</li>
+			<li>
+				<a href="<c:url value="/redirect/uriComponentsBuilder" />">UriComponentsBuilder</a>
 			</li>
 		</ul>
 	</div>

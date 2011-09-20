@@ -3,9 +3,12 @@
 <html>
 <head>
 	<title>My HTML View</title>
+	<link href="<c:url value="/resources/form.css" />" rel="stylesheet"  type="text/css" />		
 </head>
 <body>
-<h1>foo = ${foo}</h1>
-<h1>fruit = ${fruit}</h1>
+<div class="success">
+	<h3>foo: "${foo}"</h3>
+	<h3>fruit: "${fruit}"</h3>
+</div>
 </body>
 </html>
