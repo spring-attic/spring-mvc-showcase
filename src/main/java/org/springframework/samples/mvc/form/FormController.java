@@ -38,8 +38,9 @@ public class FormController {
 	}
 
 	@RequestMapping(method=RequestMethod.POST)
-	public String processSubmit(@Valid FormBean formBean, BindingResult result, boolean ajaxRequest, 
-			Model model, RedirectAttributes redirectAttrs) {
+	public String processSubmit(@Valid FormBean formBean, BindingResult result, 
+								@ModelAttribute("ajaxRequest") boolean ajaxRequest, 
+								Model model, RedirectAttributes redirectAttrs) {
 		if (result.hasErrors()) {
 			return null;
 		}
