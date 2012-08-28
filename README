@@ -1,8 +1,12 @@
-Spring MVC Showcase
--------------------
+SpringMVC Twitter Bootstrap Showcase
+------------------------------------
+
+Note: Modified from: https://github.com/SpringSource/spring-mvc-showcase
+
 Demonstrates the capabilities of the Spring MVC web framework through small, simple examples.
-After reviewing this showcase, you should have a good understanding of what Spring MVC can do and get a feel for how easy it is to use.
-Includes project code along with a supporting slideshow and screen cast.
+After reviewing this showcase, you should have a good understanding of what Spring MVC can do and get a feel for how easy it is to use. 
+
+Integrates with Twitter Bootstrap and Sitemesh. Includes project code along with a supporting slideshow and screen cast.
 
 In this showcase you'll see the following in action:
 
@@ -29,7 +33,7 @@ To run the application:
 -------------------	
 From the command line with Maven:
 $ cd spring-mvc-showcase
-$ mvn tomcat:run
+$ mvn jetty:run
 
 or
 

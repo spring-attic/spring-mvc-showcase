@@ -30,6 +30,17 @@
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 
+	<!--Sitemesh: Decorates pages with layouts -->
+	<filter>
+	  <filter-name>sitemesh</filter-name>
+	  <filter-class>com.opensymphony.sitemesh.webapp.SiteMeshFilter</filter-class>
+	</filter>
+	 
+	<filter-mapping>
+	  <filter-name>sitemesh</filter-name>
+	  <url-pattern>/*</url-pattern>
+	</filter-mapping>
+
 	<!-- Disables Servlet Container welcome file handling. Needed for compatibility with Servlet 3.0 and Tomcat 7.0 -->
 	<welcome-file-list>
 		<welcome-file></welcome-file>
