@@ -5,7 +5,7 @@
 
   <body>  
     <p class="lead">
-        <a href="https://github.com/SpringSource/spring-mvc-showcase" target="_blank">Spring MVC Showcase</a> is a great start. However Bootstrap is awesome. This project brings them together, <a href="<c:url value="/faq" />"> among other goals. <a/>
+        <a href="https://github.com/SpringSource/spring-mvc-showcase" target="_blank">Spring MVC Showcase</a> is a great start. However Bootstrap is awesome. This project brings them together, <a href="<c:url value="/faq" />"> along with other goals. <a/>
     </p>        
     
     <hr class="soften">
