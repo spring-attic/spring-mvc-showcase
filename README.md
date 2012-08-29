@@ -16,7 +16,7 @@
 - Integrate [Spring Social](http://www.springsource.org/spring-social) and [Spring Data](http://www.springsource.org/spring-data)?
 
 ## Live Demo
-http://springmvc-twitterbootstrap-showcase.cloudfoundry.com
+http://springmvc-twbootstrap-showcase.cloudfoundry.com
 
 ## Run locally with Maven
 1. Build 
