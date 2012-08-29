@@ -4,45 +4,41 @@
 <html lang="en">
 
   <body>  
-    <p class="lead">
-        <a href="https://github.com/SpringSource/spring-mvc-showcase" target="_blank">Spring MVC Showcase</a> is a great start. However Bootstrap is awesome. This project brings them together, <a href="<c:url value="/faq" />"> along with other goals. <a/>
-    </p>        
-    
-    <hr class="soften">
-    
-    <div class="row-fluid">              
-        <div class="span3">         
-          <h3>Build with Maven</h3>
-            <ul>
-                <li>  <code> $ mvn clean install </code> </li>               
-            </ul>
-        </div>
-        <div class="span3">
-          
-          <h3>Run in Jetty</h3>
-             <ul>
-                 <li> <code> $ mvn jetty:run </code> </li>  
-             </ul>       
-        </div>
-        <div class="span6">
-          <h3> See Spring in action: </br> <code>http://localhost:8080/spring-mvc-showcase/ </code> </li>          
-            </h3>
-           <ul>
-                <li> Simple Ajax @Controller </li>
-                <li> Mapping Requests </li>
-                <li> Obtaining Request Data </li>
-                <li> Generating Responses </li>
-                <li> Rendering Views </li>
-                <li> Forms </li>
-                <li> File Upload </li>
-                <li> Validation </li>                
-                <li> Exception Handling </li>
-                <li> Message Converters </li>
-                <li> Type Conversion </li>                
-                <li> Layout Decoration (Sitemesh) </li>            
-            <ul>  
-        </div>
-    </div>  
-    </br>   
-  </body>
+     <div class="row-fluid">     
+        <div class="span6"> 
+          <h3> 
+              Click and Learn</br>
+          </h3>
+          <ul>
+            <li> Simple Ajax @Controller </li>
+            <li> Mapping Requests </li>
+            <li> Obtaining Request Data </li>
+            <li> Generating Responses </li>
+            <li> Rendering Views </li>
+            <li> Forms </li>
+            <li> File Upload </li>
+            <li> Validation </li>                
+            <li> Exception Handling </li>
+            <li> Message Converters </li>
+            <li> Type Conversion </li>                
+            <li> Layout Decoration (Sitemesh) </li>            
+          <ul>                                
+          </h3>           
+        </div> 
+        <div class="span6"> 
+          <h3> 
+              Next Steps? Read the code.</br>
+          </h3>    
+
+          <ol>
+            <li>Clone: <br/> <code> git clone git://github.com/priyatam/springmvc-twitterbootstrap-showcase.git </code> </li>
+            <li>Build: <br/> <code> $ mvn clean install </code> </li>
+            <li>Run: <br/>  <code> $ mvn jetty:run </code></li>
+            <li>See: <br/>  <code>http://localhost:8080/spring-mvc-showcase/ </code> </li>                                
+          </ol> 
+          </h3>                             
+        </div> 
+     </div>
+
+ </body>
 </html>
