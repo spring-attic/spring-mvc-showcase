@@ -1,7 +1,7 @@
 # SpringMVC Twitter Bootstrap Showcase
 
 ## Overview
-[Spring MVC Showcase](https://github.com/SpringSource/spring-mvc-showcase) is a great start. It demonstrates the capabilities of the Spring MVC web framework through small, simple examples. After reviewing this showcase, you should have a good understanding of what Spring MVC can do and get a feel for how easy it is to use. 
+[Spring MVC Showcase](https://github.com/SpringSource/spring-mvc-showcase) built with JQuery-UI is a great start. It demonstrates the capabilities of the Spring MVC web framework through small, simple examples. After reviewing this showcase, you should have a good understanding of what Spring MVC can do and get a feel for how easy it is to use. 
 
  However [Bootstrap](http://twitter.github.com/bootstrap/) is awesome. 
 
