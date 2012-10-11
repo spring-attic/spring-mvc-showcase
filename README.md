@@ -6,36 +6,39 @@ Includes project code along with a supporting slideshow and screen cast.
 
 In this showcase you'll see the following in action:
 
-- The simplest possible @Controller
-- Mapping Requests
-- Obtaining Request Data
-- Generating Responses
-- Message Converters
-- Rendering Views
-- Type Conversion
-- Validation
-- Forms
-- File Upload
-- Exception Handling
+* The simplest possible @Controller
+* Mapping Requests
+* Obtaining Request Data
+* Generating Responses
+* Message Converters
+* Rendering Views
+* Type Conversion
+* Validation
+* Forms
+* File Upload
+* Exception Handling
 
 To get the code:
 -------------------
 Clone the repository:
-$ git clone git://github.com/SpringSource/spring-mvc-showcase.git
+
+    $ git clone git://github.com/SpringSource/spring-mvc-showcase.git
 
 If this is your first time using Github, review http://help.github.com to learn the basics.
 
 To run the application:
 -------------------	
 From the command line with Maven:
-$ cd spring-mvc-showcase
-$ mvn tomcat:run
+
+    $ cd spring-mvc-showcase
+    $ mvn tomcat:run
 
 or
 
 In your preferred IDE such as SpringSource Tool Suite (STS) or IDEA:
-- Import spring-mvc-showcase as a Maven Project
-- Drag-n-drop the project onto the "SpringSource tc Server Developer Edition" or another Servlet 2.5 or > Server to run, such as Tomcat.
+
+* Import spring-mvc-showcase as a Maven Project
+* Drag-n-drop the project onto the "SpringSource tc Server Developer Edition" or another Servlet 2.5 or > Server to run, such as Tomcat.
 
 Access the deployed web application at: http://localhost:8080/spring-mvc-showcase/
 
@@ -45,7 +48,6 @@ Framework version illustrated: Spring MVC 3.1
 
 The slide presentation is located in this directory and named MasteringSpringMVC3.pdf.
 
-A screen cast showing the showcase in action is available at http://s3.springsource.org/MVC/mvc-showcase-screencast.mov.
+A screen cast showing the showcase in action is [available in QuickTime format](http://s3.springsource.org/MVC/mvc-showcase-screencast.mov).
 
-This showcase originated from the blog at: http://blog.springsource.com/2010/07/22/spring-mvc-3-showcase/
-It was also adapted into a SpringOne presentation called "Mastering MVC 3": http://www.infoq.com/presentations/Mastering-Spring-MVC-3
+This showcase originated from a [blog post](http://blog.springsource.com/2010/07/22/spring-mvc-3-showcase/) and was adapted into a SpringOne presentation called [Mastering MVC 3](http://www.infoq.com/presentations/Mastering-Spring-MVC-3).
