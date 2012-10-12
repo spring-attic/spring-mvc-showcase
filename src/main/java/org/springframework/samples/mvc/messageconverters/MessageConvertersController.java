@@ -18,25 +18,25 @@ import com.sun.syndication.feed.rss.Channel;
 @RequestMapping("messageconverters/*")
 public class MessageConvertersController {
 
-	// StringHttpMessageConverter 
+	// StringHttpMessageConverter
 
 	@RequestMapping(value="/string", method=RequestMethod.POST)
 	public @ResponseBody String readString(@RequestBody String string) {
 		return "Read string '" + string + "'";
 	}
-	
+
 	@RequestMapping(value="/string", method=RequestMethod.GET)
 	public @ResponseBody String writeString() {
 		return "Wrote a string";
 	}
 
 	// Form encoded data (application/x-www-form-urlencoded)
-	
+
 	@RequestMapping(value="/form", method=RequestMethod.POST)
 	public @ResponseBody String readForm(@ModelAttribute JavaBean bean) {
 		return "Read x-www-form-urlencoded: " + bean;
 	}
-	
+
 	@RequestMapping(value="/form", method=RequestMethod.GET)
 	public @ResponseBody MultiValueMap<String, String> writeForm() {
 		MultiValueMap<String, String> map = new LinkedMultiValueMap<String, String>();
@@ -46,36 +46,36 @@ public class MessageConvertersController {
 	}
 
 	// Jaxb2RootElementHttpMessageConverter (requires JAXB2 on the classpath - useful for serving clients that expect to work with XML)
-	
+
 	@RequestMapping(value="/xml", method=RequestMethod.POST)
 	public @ResponseBody String readXml(@RequestBody JavaBean bean) {
 		return "Read from XML: " + bean;
 	}
-	
+
 	@RequestMapping(value="/xml", method=RequestMethod.GET)
 	public @ResponseBody JavaBean writeXml() {
-		return new JavaBean("bar", "fruit");
+		return new JavaBean("bar", "apple");
 	}
 
 	// MappingJacksonHttpMessageConverter (requires Jackson on the classpath - particularly useful for serving JavaScript clients that expect to work with JSON)
-	
+
 	@RequestMapping(value="/json", method=RequestMethod.POST)
 	public @ResponseBody String readJson(@Valid @RequestBody JavaBean bean) {
 		return "Read from JSON: " + bean;
 	}
-	
+
 	@RequestMapping(value="/json", method=RequestMethod.GET)
 	public @ResponseBody JavaBean writeJson() {
-		return new JavaBean("bar", "fruit");
+		return new JavaBean("bar", "apple");
 	}
 
 	// AtomFeedHttpMessageConverter (requires Rome on the classpath - useful for serving Atom feeds)
-	
+
 	@RequestMapping(value="/atom", method=RequestMethod.POST)
 	public @ResponseBody String readFeed(@RequestBody Feed feed) {
 		return "Read " + feed.getTitle();
 	}
-	
+
 	@RequestMapping(value="/atom", method=RequestMethod.GET)
 	public @ResponseBody Feed writeFeed() {
 		Feed feed = new Feed();
@@ -85,12 +85,12 @@ public class MessageConvertersController {
 	}
 
 	// RssChannelHttpMessageConverter (requires Rome on the classpath - useful for serving RSS feeds)
-	
+
 	@RequestMapping(value="/rss", method=RequestMethod.POST)
 	public @ResponseBody String readChannel(@RequestBody Channel channel) {
 		return "Read " + channel.getTitle();
 	}
-	
+
 	@RequestMapping(value="/rss", method=RequestMethod.GET)
 	public @ResponseBody Channel writeChannel() {
 		Channel channel = new Channel();

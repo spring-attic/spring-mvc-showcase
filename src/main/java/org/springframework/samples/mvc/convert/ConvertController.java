@@ -25,7 +25,7 @@ public class ConvertController {
 	public @ResponseBody String date(@PathVariable @DateTimeFormat(iso=ISO.DATE) Date value) {
 		return "Converted date " + value;
 	}
-	
+
 	@RequestMapping("collection")
 	public @ResponseBody String collection(@RequestParam Collection<Integer> values) {
 		return "Converted collection " + values;

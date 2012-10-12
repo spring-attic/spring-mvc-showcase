@@ -19,12 +19,12 @@ public class ResponseController {
 
 	@RequestMapping(value="/response/charset/accept", method=RequestMethod.GET)
 	public @ResponseBody String responseAcceptHeaderCharset() {
-		return "こんにちは世界！ (\"Hello world!\" in Japanese)";
+		return "\u3053\u3093\u306b\u3061\u306f\u4e16\u754c\uff01 (\"Hello world!\" in Japanese)";
 	}
 
 	@RequestMapping(value="/response/charset/produce", method=RequestMethod.GET, produces="text/plain;charset=UTF-8")
 	public @ResponseBody String responseProducesConditionCharset() {
-		return "こんにちは世界！ (\"Hello world!\" in Japanese)";
+		return "\u3053\u3093\u306b\u3061\u306f\u4e16\u754c\uff01 (\"Hello world!\" in Japanese)";
 	}
 
 	@RequestMapping(value="/response/entity/status", method=RequestMethod.GET)
