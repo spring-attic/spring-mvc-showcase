@@ -40,7 +40,7 @@ public class StandardArgumentsControllerTests {
 	public void request() throws Exception {
 		this.mockMvc.perform(get("/data/standard/request"))
 				.andExpect(content().string(startsWith(
-						"request = org.springframework.mock.web.MockHttpServletRequest@")));
+						"request = org.springframework.test.web.mock.servlet.request.Servlet3MockHttpServletRequest@")));
 	}
 
 	@Test
