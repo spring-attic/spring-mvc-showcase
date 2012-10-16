@@ -3,6 +3,7 @@ package org.springframework.samples.mvc.data;
 import org.springframework.http.HttpEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.web.bind.annotation.MatrixVariable;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
@@ -12,30 +13,30 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-@RequestMapping("/data/*")
+@RequestMapping("/data")
 public class RequestDataController {
 
-	@RequestMapping(value="param")
+	@RequestMapping(value="param", method=RequestMethod.GET)
 	public @ResponseBody String withParam(@RequestParam String foo) {
 		return "Obtained 'foo' query parameter value '" + foo + "'";
 	}
 
-	@RequestMapping(value="group")
+	@RequestMapping(value="group", method=RequestMethod.GET)
 	public @ResponseBody String withParamGroup(JavaBean bean) {
 		return "Obtained parameter group " + bean;
 	}
 
-	@RequestMapping(value="path/{var}")
+	@RequestMapping(value="path/{var}", method=RequestMethod.GET)
 	public @ResponseBody String withPathVariable(@PathVariable String var) {
 		return "Obtained 'var' path variable value '" + var + "'";
 	}
 
-	@RequestMapping(value="header")
+	@RequestMapping(value="header", method=RequestMethod.GET)
 	public @ResponseBody String withHeader(@RequestHeader String Accept) {
 		return "Obtained 'Accept' header '" + Accept + "'";
 	}
 
-	@RequestMapping(value="cookie")
+	@RequestMapping(value="cookie", method=RequestMethod.GET)
 	public @ResponseBody String withCookie(@CookieValue String openid_provider) {
 		return "Obtained 'openid_provider' cookie '" + openid_provider + "'";
 	}

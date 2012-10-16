@@ -2,6 +2,7 @@ package org.springframework.samples.mvc.mapping;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -46,13 +47,18 @@ public class MappingController {
 		return "Mapped by path + method + absence of header!";
 	}
 
-	@RequestMapping(value="/mapping/consumes", method=RequestMethod.POST, consumes="application/json")
+	@RequestMapping(value="/mapping/consumes", method=RequestMethod.POST, consumes=MediaType.APPLICATION_JSON_VALUE)
 	public @ResponseBody String byConsumes(@RequestBody JavaBean javaBean) {
 		return "Mapped by path + method + consumable media type (javaBean '" + javaBean + "')";
 	}
 
-	@RequestMapping(value="/mapping/produces", method=RequestMethod.GET, produces="application/json")
-	public @ResponseBody JavaBean byProduces() {
+	@RequestMapping(value="/mapping/produces", method=RequestMethod.GET, produces=MediaType.APPLICATION_JSON_VALUE)
+	public @ResponseBody JavaBean byProducesJson() {
+		return new JavaBean();
+	}
+
+	@RequestMapping(value="/mapping/produces", method=RequestMethod.GET, produces=MediaType.APPLICATION_XML_VALUE)
+	public @ResponseBody JavaBean byProducesXml() {
 		return new JavaBean();
 	}
 

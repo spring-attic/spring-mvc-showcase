@@ -15,7 +15,7 @@ import com.sun.syndication.feed.atom.Feed;
 import com.sun.syndication.feed.rss.Channel;
 
 @Controller
-@RequestMapping("messageconverters/*")
+@RequestMapping("/messageconverters")
 public class MessageConvertersController {
 
 	// StringHttpMessageConverter

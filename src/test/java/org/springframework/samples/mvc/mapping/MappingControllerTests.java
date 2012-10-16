@@ -21,20 +21,25 @@ import static org.springframework.test.web.mock.servlet.request.MockMvcRequestBu
 import static org.springframework.test.web.mock.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.mock.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.mock.servlet.result.MockMvcResultMatchers.status;
-import static org.springframework.test.web.mock.servlet.setup.MockMvcBuilders.standaloneSetup;
+import static org.springframework.test.web.mock.servlet.result.MockMvcResultMatchers.xpath;
+import static org.springframework.test.web.mock.servlet.setup.MockMvcBuilders.webAppContextSetup;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.http.MediaType;
+import org.springframework.samples.mvc.AbstractContextControllerTests;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.web.mock.servlet.MockMvc;
 
-public class MappingControllerTests {
+@RunWith(SpringJUnit4ClassRunner.class)
+public class MappingControllerTests extends AbstractContextControllerTests {
 
 	private MockMvc mockMvc;
 
 	@Before
 	public void setup() throws Exception {
-		this.mockMvc = standaloneSetup(new MappingController()).alwaysExpect(status().isOk()).build();
+		this.mockMvc = webAppContextSetup(this.wac).alwaysExpect(status().isOk()).build();
 	}
 
 	@Test
@@ -75,7 +80,7 @@ public class MappingControllerTests {
 	@Test
 	public void byHeaderNegation() throws Exception {
 		this.mockMvc.perform(get("/mapping/header"))
-				.andExpect(content().string("Mapped by path + method + absence of header!"));
+ 				.andExpect(content().string("Mapped by path + method + absence of header!"));
 	}
 
 	@Test
@@ -88,10 +93,31 @@ public class MappingControllerTests {
 	}
 
 	@Test
-	public void byProduces() throws Exception {
+	public void byProducesAcceptJson() throws Exception {
 		this.mockMvc.perform(get("/mapping/produces").accept(MediaType.APPLICATION_JSON))
 				.andExpect(jsonPath("$.foo").value("bar"))
 				.andExpect(jsonPath("$.fruit").value("apple"));
+	}
+
+	@Test
+	public void byProducesAcceptXml() throws Exception {
+		this.mockMvc.perform(get("/mapping/produces").accept(MediaType.APPLICATION_XML))
+				.andExpect(xpath("/javaBean/foo").string("bar"))
+				.andExpect(xpath("/javaBean/fruit").string("apple"));
+	}
+
+	@Test
+	public void byProducesJsonExtension() throws Exception {
+		this.mockMvc.perform(get("/mapping/produces.json"))
+				.andExpect(jsonPath("$.foo").value("bar"))
+				.andExpect(jsonPath("$.fruit").value("apple"));
+	}
+
+	@Test
+	public void byProducesXmlExtension() throws Exception {
+		this.mockMvc.perform(get("/mapping/produces.xml"))
+				.andExpect(xpath("/javaBean/foo").string("bar"))
+				.andExpect(xpath("/javaBean/fruit").string("apple"));
 	}
 
 }
