@@ -1,8 +1,8 @@
 package org.springframework.samples.mvc.fileupload;
 
-import static org.springframework.test.web.mock.servlet.request.MockMvcRequestBuilders.fileUpload;
-import static org.springframework.test.web.mock.servlet.result.MockMvcResultMatchers.model;
-import static org.springframework.test.web.mock.servlet.setup.MockMvcBuilders.webAppContextSetup;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.fileUpload;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
+import static org.springframework.test.web.servlet.setup.MockMvcBuilders.webAppContextSetup;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

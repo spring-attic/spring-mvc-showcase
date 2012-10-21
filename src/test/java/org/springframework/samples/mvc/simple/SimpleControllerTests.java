@@ -1,9 +1,9 @@
 package org.springframework.samples.mvc.simple;
 
-import static org.springframework.test.web.mock.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.mock.servlet.result.MockMvcResultMatchers.content;
-import static org.springframework.test.web.mock.servlet.result.MockMvcResultMatchers.status;
-import static org.springframework.test.web.mock.servlet.setup.MockMvcBuilders.standaloneSetup;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.setup.MockMvcBuilders.standaloneSetup;
 
 import org.junit.Test;
 

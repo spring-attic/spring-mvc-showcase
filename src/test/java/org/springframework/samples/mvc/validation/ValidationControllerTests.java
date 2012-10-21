@@ -1,14 +1,13 @@
 package org.springframework.samples.mvc.validation;
 
-import static org.springframework.test.web.mock.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.mock.servlet.result.MockMvcResultHandlers.print;
-import static org.springframework.test.web.mock.servlet.result.MockMvcResultMatchers.content;
-import static org.springframework.test.web.mock.servlet.result.MockMvcResultMatchers.status;
-import static org.springframework.test.web.mock.servlet.setup.MockMvcBuilders.standaloneSetup;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.setup.MockMvcBuilders.standaloneSetup;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.springframework.test.web.mock.servlet.MockMvc;
+import org.springframework.test.web.servlet.MockMvc;
 
 public class ValidationControllerTests {
 
@@ -28,7 +27,6 @@ public class ValidationControllerTests {
 	@Test
 	public void validateErrors() throws Exception {
 		this.mockMvc.perform(get("/validate?number=3&date=2010-07-01"))
-				.andDo(print())
 				.andExpect(content().string("Object has validation errors"));
 	}
 

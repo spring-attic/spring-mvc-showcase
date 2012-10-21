@@ -1,17 +1,17 @@
 package org.springframework.samples.mvc.response;
 
-import static org.springframework.test.web.mock.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.mock.servlet.result.MockMvcResultHandlers.print;
-import static org.springframework.test.web.mock.servlet.result.MockMvcResultMatchers.content;
-import static org.springframework.test.web.mock.servlet.result.MockMvcResultMatchers.status;
-import static org.springframework.test.web.mock.servlet.setup.MockMvcBuilders.standaloneSetup;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.setup.MockMvcBuilders.standaloneSetup;
 
 import java.nio.charset.Charset;
 
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.http.MediaType;
-import org.springframework.test.web.mock.servlet.MockMvc;
+import org.springframework.test.web.servlet.MockMvc;
 
 public class ResponseControllerTests {
 
@@ -34,7 +34,6 @@ public class ResponseControllerTests {
 		this.mockMvc.perform(
 				get("/response/charset/accept")
 					.accept(new MediaType("text", "plain", Charset.forName("UTF-8"))))
-				.andDo(print())
 				.andExpect(status().isOk())
 				.andExpect(content().string(
 						"\u3053\u3093\u306b\u3061\u306f\u4e16\u754c\uff01 (\"Hello world!\" in Japanese)"));

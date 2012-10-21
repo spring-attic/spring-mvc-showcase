@@ -1,17 +1,17 @@
 package org.springframework.samples.mvc.async;
 
 import static org.hamcrest.Matchers.instanceOf;
-import static org.springframework.test.web.mock.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.mock.servlet.result.MockMvcResultMatchers.request;
-import static org.springframework.test.web.mock.servlet.result.MockMvcResultMatchers.status;
-import static org.springframework.test.web.mock.servlet.setup.MockMvcBuilders.webAppContextSetup;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.request;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.setup.MockMvcBuilders.webAppContextSetup;
 
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.samples.mvc.AbstractContextControllerTests;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.web.mock.servlet.MockMvc;
+import org.springframework.test.web.servlet.MockMvc;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 public class CallableControllerTests extends AbstractContextControllerTests {

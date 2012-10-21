@@ -1,17 +1,18 @@
 package org.springframework.samples.mvc.form;
 
-import static org.springframework.test.web.mock.servlet.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.mock.servlet.result.MockMvcResultMatchers.flash;
-import static org.springframework.test.web.mock.servlet.result.MockMvcResultMatchers.model;
-import static org.springframework.test.web.mock.servlet.result.MockMvcResultMatchers.redirectedUrl;
-import static org.springframework.test.web.mock.servlet.result.MockMvcResultMatchers.status;
-import static org.springframework.test.web.mock.servlet.result.MockMvcResultMatchers.view;
-import static org.springframework.test.web.mock.servlet.setup.MockMvcBuilders.standaloneSetup;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.flash;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.redirectedUrl;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
+import static org.springframework.test.web.servlet.setup.MockMvcBuilders.standaloneSetup;
 
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.http.MediaType;
-import org.springframework.test.web.mock.servlet.MockMvc;
+import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 public class FormControllerTests {
@@ -32,10 +33,9 @@ public class FormControllerTests {
 	public void submitSuccess() throws Exception {
 		this.mockMvc.perform(
 				post("/form")
-					.contentType(MediaType.APPLICATION_FORM_URLENCODED)
 					.param("name", "Joe")
 					.param("age", "56")
-					.param("birthDate", "1941/12/16")
+					.param("birthDate", "1941-12-16")
 					.param("phone", "(347) 888-1234")
 					.param("currency", "$123.33")
 					.param("percent", "89%")
@@ -46,6 +46,7 @@ public class FormControllerTests {
 					.param("additionalInfo[java]", "true")
 					.param("_additionalInfo[java]", "on")
 					.param("subscribeNewsletter", "false"))
+				.andDo(print())
 				.andExpect(status().isMovedTemporarily())
 				.andExpect(redirectedUrl("/form"))
 				.andExpect(flash().attribute("message",
@@ -59,11 +60,10 @@ public class FormControllerTests {
 	public void submitSuccessAjax() throws Exception {
 		this.mockMvc.perform(
 				post("/form")
-					.contentType(MediaType.APPLICATION_FORM_URLENCODED)
 					.header("X-Requested-With", "XMLHttpRequest")
 					.param("name", "Joe")
 					.param("age", "56")
-					.param("birthDate", "1941/12/16")
+					.param("birthDate", "1941-12-16")
 					.param("phone", "(347) 888-1234")
 					.param("currency", "$123.33")
 					.param("percent", "89%")
@@ -87,7 +87,7 @@ public class FormControllerTests {
 	@Test
 	public void submitError() throws Exception {
 		this.mockMvc.perform(
-				post("/form").contentType(MediaType.APPLICATION_FORM_URLENCODED))
+				post("/form"))
 				.andExpect(status().isOk())
 				.andExpect(view().name("form"))
 				.andExpect(model().errorCount(2))

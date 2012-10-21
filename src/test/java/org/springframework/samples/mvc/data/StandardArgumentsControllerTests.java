@@ -1,17 +1,17 @@
 package org.springframework.samples.mvc.data;
 
 import static org.hamcrest.Matchers.startsWith;
-import static org.springframework.test.web.mock.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.mock.servlet.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.mock.servlet.result.MockMvcResultMatchers.content;
-import static org.springframework.test.web.mock.servlet.result.MockMvcResultMatchers.status;
-import static org.springframework.test.web.mock.servlet.setup.MockMvcBuilders.standaloneSetup;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.setup.MockMvcBuilders.standaloneSetup;
 
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.http.MediaType;
 import org.springframework.samples.mvc.data.standard.StandardArgumentsController;
-import org.springframework.test.web.mock.servlet.MockMvc;
+import org.springframework.test.web.servlet.MockMvc;
 
 public class StandardArgumentsControllerTests {
 	private MockMvc mockMvc;
@@ -25,7 +25,7 @@ public class StandardArgumentsControllerTests {
 	public void request() throws Exception {
 		this.mockMvc.perform(get("/data/standard/request"))
 				.andExpect(content().string(startsWith(
-						"request = org.springframework.test.web.mock.servlet.request.Servlet3MockHttpServletRequest@")));
+						"request = org.springframework.test.web.servlet.request.Servlet3MockHttpServletRequest@")));
 	}
 
 	@Test
