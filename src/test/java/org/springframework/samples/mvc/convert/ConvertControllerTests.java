@@ -6,6 +6,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.setup.MockMvcBuilders.standaloneSetup;
 
+import java.util.Date;
+import java.util.TimeZone;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.format.support.DefaultFormattingConversionService;
@@ -13,6 +16,14 @@ import org.springframework.format.support.FormattingConversionService;
 import org.springframework.test.web.servlet.MockMvc;
 
 public class ConvertControllerTests {
+
+	private static String TIMEZONE;
+
+	static {
+		TimeZone timezone = TimeZone.getDefault();
+		boolean inDaylight = timezone.inDaylightTime(new Date());
+		TIMEZONE = TimeZone.getDefault().getDisplayName(inDaylight, TimeZone.SHORT);
+	}
 
 	private MockMvc mockMvc;
 
@@ -36,7 +47,7 @@ public class ConvertControllerTests {
 	@Test
 	public void date() throws Exception {
 		this.mockMvc.perform(get("/convert/date/2010-07-04"))
-				.andExpect(content().string("Converted date Sun Jul 04 00:00:00 EDT 2010"));
+				.andExpect(content().string("Converted date Sun Jul 04 00:00:00 " + TIMEZONE + " 2010"));
 	}
 
 	@Test
@@ -54,7 +65,9 @@ public class ConvertControllerTests {
 	@Test
 	public void formattedCollection() throws Exception {
 		this.mockMvc.perform(get("/convert/formattedCollection?values=2010-07-04,2011-07-04"))
-				.andExpect(content().string("Converted formatted collection [Sun Jul 04 00:00:00 EDT 2010, Mon Jul 04 00:00:00 EDT 2011]"));
+				.andExpect(content().string(
+						"Converted formatted collection [Sun Jul 04 00:00:00 "
+								+ TIMEZONE + " 2010, Mon Jul 04 00:00:00 " + TIMEZONE + " 2011]"));
 	}
 
 	@Test
@@ -79,7 +92,7 @@ public class ConvertControllerTests {
 	@Test
 	public void beanDate() throws Exception {
 		this.mockMvc.perform(get("/convert/bean?date=2010-07-04"))
-				.andExpect(content().string("Converted JavaBean date=Sun Jul 04 00:00:00 EDT 2010"));
+				.andExpect(content().string("Converted JavaBean date=Sun Jul 04 00:00:00 " + TIMEZONE + " 2010"));
 	}
 
 	@Test
@@ -98,7 +111,8 @@ public class ConvertControllerTests {
 	public void beanFormattedCollection() throws Exception {
 		this.mockMvc.perform(get("/convert/bean?formattedList[0]=2010-07-04&formattedList[1]=2011-07-04"))
 				.andExpect(content().string(
-						"Converted JavaBean formattedList=[Sun Jul 04 00:00:00 EDT 2010, Mon Jul 04 00:00:00 EDT 2011]"));
+						"Converted JavaBean formattedList=[Sun Jul 04 00:00:00 " + TIMEZONE
+							+ " 2010, Mon Jul 04 00:00:00 " + TIMEZONE + " 2011]"));
 	}
 
 	@Test
