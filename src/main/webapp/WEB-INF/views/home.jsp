@@ -412,7 +412,7 @@
 		</li>
 		<li>
 			<a id="callableCustomTimeoutLink" class="textLink"
-				href="<c:url value="/async/callable/custom-timeout" />">GET /async/callable/custom-timeout</a> (503 expected)
+				href="<c:url value="/async/callable/custom-timeout-handling" />">GET /async/callable/custom-timeout-handling</a>
 		</li>
 		<li>
 			<a id="deferredResultSuccessLink" class="textLink"

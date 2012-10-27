@@ -60,8 +60,8 @@ public class CallableController {
 		};
 	}
 
-	@RequestMapping("/custom-timeout")
-	public @ResponseBody AsyncTask<String> callableWithCustomTimeout() {
+	@RequestMapping("/custom-timeout-handling")
+	public @ResponseBody AsyncTask<String> callableWithCustomTimeoutHandling() {
 
 		Callable<String> callable = new Callable<String>() {
 			@Override
