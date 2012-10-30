@@ -2,6 +2,7 @@ package org.springframework.samples.mvc.messageconverters;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -87,6 +88,14 @@ public class MessageConvertersControllerTests extends AbstractContextControllerT
 	@Test
 	public void writeJson() throws Exception {
 		this.mockMvc.perform(get(URI, "json").accept(MediaType.APPLICATION_JSON))
+				.andExpect(jsonPath("$.foo").value("bar"))
+				.andExpect(jsonPath("$.fruit").value("apple"));
+	}
+
+	@Test
+	public void writeJson2() throws Exception {
+		this.mockMvc.perform(get(URI, "json").accept(MediaType.APPLICATION_JSON))
+				.andDo(print())
 				.andExpect(jsonPath("$.foo").value("bar"))
 				.andExpect(jsonPath("$.fruit").value("apple"));
 	}

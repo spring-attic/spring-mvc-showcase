@@ -12,18 +12,18 @@
 <div id="tabs">
 	<ul>
 		<li><a href="#simple">Simple</a></li>
-		<li><a href="#mapping">Mapping Requests</a></li>
-		<li><a href="#data">Obtaining Request Data</a></li>
-		<li><a href="#responses">Writing Responses</a></li>
+		<li><a href="#mapping">Request Mapping</a></li>
+		<li><a href="#data">Request Data</a></li>
+		<li><a href="#responses">Response Writing</a></li>
 		<li><a href="#messageconverters">Message Converters</a></li>
-		<li><a href="#views">Rendering Views</a></li>
+		<li><a href="#views">View Rendering</a></li>
 		<li><a href="#convert">Type Conversion</a></li>
 		<li><a href="#validation">Validation</a></li>
 		<li><a href="<c:url value="/form" />" title="forms">Forms</a></li>
 		<li><a href="<c:url value="/fileupload" />" title="fileupload">File Upload</a></li>
 		<li><a href="#exceptions">Exception Handling</a></li>
 		<li><a href="#redirect">Redirecting</a></li>
-        <li><a href="#async">Async</a></li>
+        <li><a href="#async">Async Requests</a></li>
     </ul>
     <div id="simple">
 		<h2>Simple</h2>
@@ -40,7 +40,7 @@
 		</ul>
 	</div>
 	<div id="mapping">
-		<h2>Mapping Requests</h2>
+		<h2>Request Mapping</h2>
 		<p>
 			See the <code>org.springframework.samples.mvc.mapping</code> package for the @Controller code
 		</p>
@@ -86,7 +86,7 @@
 		</ul>
 	</div>
 	<div id="data">
-		<h2>Obtaining Request Data</h2>
+		<h2>Request Data</h2>
 		<p>
 			See the <code>org.springframework.samples.mvc.data</code> package for the @Controller code
 		</p>
@@ -99,6 +99,12 @@
 			</li>
 			<li>
 				<a id="var" class="textLink" href="<c:url value="/data/path/foo" />">Path variable</a>
+			</li>
+			<li>
+				<a id="matrixVar" class="textLink" href="<c:url value="/data/matrixvars;foo=bar/simple" />">Matrix variable</a>
+			</li>
+			<li>
+				<a id="matrixVarMultiple" class="textLink" href="<c:url value="/data/matrixvars;foo=bar1/multiple;foo=bar2" />">Matrix variables (multiple)</a>
 			</li>
 			<li>
 				<a id="header" class="textLink" href="<c:url value="/data/header" />">Header</a>
@@ -154,7 +160,7 @@
 		</div>
 	</div>
 	<div id="responses">
-		<h2>Writing Responses</h2>
+		<h2>Response Writing</h2>
 		<p>
 			See the <code>org.springframework.samples.mvc.response</code> package for the @Controller code
 		</p>		
@@ -262,7 +268,7 @@
 		</div>
 	</div>
 	<div id="views">
-		<h2>Rendering Views</h2>
+		<h2>View Rendering</h2>
 		<p>
 			See the <code>org.springframework.samples.mvc.views</code> package for the @Controller code
 		</p>
@@ -385,7 +391,7 @@
 		</ul>
 	</div>
 	<div id="async">
-		<h2>Async</h2>
+		<h2>Async Requests</h2>
 		<p>
 			<em>Note: Links may take 2-3 seconds to complete.</em>
 		</p>

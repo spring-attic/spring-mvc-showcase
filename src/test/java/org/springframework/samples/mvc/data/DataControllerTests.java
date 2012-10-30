@@ -5,20 +5,24 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-import static org.springframework.test.web.servlet.setup.MockMvcBuilders.standaloneSetup;
+import static org.springframework.test.web.servlet.setup.MockMvcBuilders.webAppContextSetup;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.http.MediaType;
+import org.springframework.samples.mvc.AbstractContextControllerTests;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
-public class DataControllerTests {
+@RunWith(SpringJUnit4ClassRunner.class)
+public class DataControllerTests extends AbstractContextControllerTests {
 
 	private MockMvc mockMvc;
 
 	@Before
 	public void setup() throws Exception {
-		this.mockMvc = standaloneSetup(new RequestDataController()).alwaysExpect(status().isOk()).build();
+		this.mockMvc = webAppContextSetup(this.wac).alwaysExpect(status().isOk()).build();
 	}
 
 	@Test
@@ -35,9 +39,21 @@ public class DataControllerTests {
 	}
 
 	@Test
-	public void pathvar() throws Exception {
+	public void pathVar() throws Exception {
 		this.mockMvc.perform(get("/data/path/foo"))
 				.andExpect(content().string("Obtained 'var' path variable value 'foo'"));
+	}
+
+	@Test
+	public void matrixVar() throws Exception {
+		this.mockMvc.perform(get("/data/matrixvars;foo=bar/simple"))
+				.andExpect(content().string("Obtained matrix variable 'foo=bar' from path segment 'matrixvars'"));
+	}
+
+	@Test
+	public void matrixVarMultiple() throws Exception {
+		this.mockMvc.perform(get("/data/matrixvars;foo=bar1/multiple;foo=bar2"))
+				.andExpect(content().string("Obtained matrix variable foo=bar1 from path segment 'matrixvars' and variable 'foo=bar2 from path segment 'multiple'"));
 	}
 
 	@Test
