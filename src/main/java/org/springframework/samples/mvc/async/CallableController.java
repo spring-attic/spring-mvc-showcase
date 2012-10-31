@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.context.request.async.AsyncTask;
+import org.springframework.web.context.request.async.MvcAsyncTask;
 
 @Controller
 @RequestMapping("/async/callable")
@@ -61,7 +61,7 @@ public class CallableController {
 	}
 
 	@RequestMapping("/custom-timeout-handling")
-	public @ResponseBody AsyncTask<String> callableWithCustomTimeoutHandling() {
+	public @ResponseBody MvcAsyncTask<String> callableWithCustomTimeoutHandling() {
 
 		Callable<String> callable = new Callable<String>() {
 			@Override
@@ -71,7 +71,7 @@ public class CallableController {
 			}
 		};
 
-		return new AsyncTask<String>(1000, callable);
+		return new MvcAsyncTask<String>(1000, callable);
 	}
 
 	@ExceptionHandler
