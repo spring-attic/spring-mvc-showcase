@@ -1,6 +1,7 @@
 package org.springframework.samples.mvc.async;
 
 import java.util.Queue;
+import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.PriorityBlockingQueue;
 
 import org.springframework.scheduling.annotation.Scheduled;
@@ -15,11 +16,11 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("/async")
 public class DeferredResultController {
 
-	private final Queue<DeferredResult<String>> responseBodyQueue = new PriorityBlockingQueue<DeferredResult<String>>();
+	private final Queue<DeferredResult<String>> responseBodyQueue = new ConcurrentLinkedQueue<DeferredResult<String>>();
 
-	private final Queue<DeferredResult<ModelAndView>> mavQueue = new PriorityBlockingQueue<DeferredResult<ModelAndView>>();
+	private final Queue<DeferredResult<ModelAndView>> mavQueue = new ConcurrentLinkedQueue<DeferredResult<ModelAndView>>();
 
-	private final Queue<DeferredResult<String>> exceptionQueue = new PriorityBlockingQueue<DeferredResult<String>>();
+	private final Queue<DeferredResult<String>> exceptionQueue = new ConcurrentLinkedQueue<DeferredResult<String>>();
 
 
 	@RequestMapping("/deferred-result/response-body")
