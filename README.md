@@ -32,9 +32,13 @@ From the command line with Maven:
 
     $ cd spring-mvc-showcase
     $ mvn tomcat:run
+    
    or to use The Apache Tomcat Maven Plugin 2 (http://tomcat.apache.org/maven-plugin-2.0/)
+   
     $ mvn tomcat7:run
+    
    and navigate to
+   
     http://localhost:8080/spring-mvc-showcase/ 
 
 or
