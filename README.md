@@ -31,7 +31,7 @@ To run the application:
 From the command line with Maven:
 
     $ cd spring-mvc-showcase
-    $ mvn tomcat:run
+    $ mvn tomcat7:run
 
 or
 
