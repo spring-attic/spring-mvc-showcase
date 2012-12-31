@@ -36,6 +36,11 @@ From the command line with Maven:
    or to use The Apache Tomcat Maven Plugin 2 (http://tomcat.apache.org/maven-plugin-2.0/)
    
     $ mvn tomcat7:run
+
+		or 
+
+	$ mvn org.apache.tomcat.maven:tomcat7-maven-plugin:2.0:run
+	
     
 or
 
