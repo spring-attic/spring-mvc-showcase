@@ -59,9 +59,11 @@ A screen cast showing the showcase in action is [available in QuickTime format](
 
 This showcase originated from a [blog post](http://blog.springsource.com/2010/07/22/spring-mvc-3-showcase/) and was adapted into a SpringOne presentation called [Mastering MVC 3](http://www.infoq.com/presentations/Mastering-Spring-MVC-3).
 
----  raw ---
+Maven plugins configuration:
+-------------------
 
 add this to .m2/settings.xml
+
   <pluginGroups>
     <!-- pluginGroup
      | Specifies a further group identifier to use for plugin lookup.
@@ -75,8 +77,8 @@ add this to .m2/settings.xml
 
 run tomcat or Jetty via maven
   
- $ mvn tomcat7:run
+    $ mvn tomcat7:run
  
  or 
  
- $ mvn jetty:run
+    $ mvn jetty:run
