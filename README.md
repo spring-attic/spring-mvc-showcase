@@ -69,16 +69,16 @@ Maven plugins configuration:
 
 add this to .m2/settings.xml
 
-  <pluginGroups>
-    <!-- pluginGroup
-     | Specifies a further group identifier to use for plugin lookup.
-    <pluginGroup>com.your.plugins</pluginGroup>
-    -->
-	 <!-- http://tomcat.apache.org/maven-plugin-2.0/ -->
-	 <pluginGroup>org.apache.tomcat.maven</pluginGroup>
-     <!-- http://docs.codehaus.org/display/JETTY/Maven+Jetty+Plugin -->
-     <pluginGroup>org.mortbay.jetty</pluginGroup>
-  </pluginGroups>
+    <pluginGroups>
+	     <!-- pluginGroup
+	     | Specifies a further group identifier to use for plugin lookup.
+	    <pluginGroup>com.your.plugins</pluginGroup>
+	    -->
+		 <!-- http://tomcat.apache.org/maven-plugin-2.0/ -->
+		 <pluginGroup>org.apache.tomcat.maven</pluginGroup>
+	     <!-- http://docs.codehaus.org/display/JETTY/Maven+Jetty+Plugin -->
+	     <pluginGroup>org.mortbay.jetty</pluginGroup>
+    </pluginGroups>
 
 run tomcat or Jetty via maven
   
