@@ -1,19 +1,13 @@
 # SpringMVC Twitter Bootstrap Showcase
 
 ## Overview
-[Spring MVC Showcase](https://github.com/SpringSource/spring-mvc-showcase) built with JQuery-UI is a great start. It demonstrates the capabilities of the Spring MVC web framework through small, simple examples. After reviewing this showcase, you should have a good understanding of what Spring MVC can do and get a feel for how easy it is to use. 
+This fork replaces [Spring MVC Showcase's](https://github.com/SpringSource/spring-mvc-showcase) JQuery-UI with [Bootstrap](http://twitter.github.com/bootstrap/), tomcat with embedded jetty, tiles with [Sitemesh](http://www.sitemesh.org/), and other cleanup tasks (commmon js file).
 
- However [Bootstrap](http://twitter.github.com/bootstrap/) is awesome. 
+For a complex use of SpringMVC/JQuery/Bootstrap/Ajax, see [Spring MVC/REST Best Practices](https://github.com/priyatam/spring-best-practices)
 
- This fork brings them together, along with other goals:
-
-- Use only embedded servers (jetty, h2, etc.,)
-- Decorate Layouts with [Sitemesh](http://www.sitemesh.org/)
-- Move page-specific js into a commmon js
-- Incorporate Themes from [Bootswatch](http://bootswatch.com)
-- Build the tutorial into the app?
-- Extend showcase with more features, gotchas, best practices?     
-- Integrate [Spring Social](http://www.springsource.org/spring-social) and [Spring Data](http://www.springsource.org/spring-data)?
+## Major Versions used
+> Spring 3.2  
+> Twitter Bootstrap 2.3
 
 ## Live Demo
 http://springmvc-twbootstrap-showcase.cloudfoundry.com
