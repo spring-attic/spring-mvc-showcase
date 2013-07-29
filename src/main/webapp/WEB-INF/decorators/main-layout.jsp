@@ -9,8 +9,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
   <meta name="author" content="">
-  <link href="<c:url value="/resources/css/bootstrap.min.css" />" rel="stylesheet"  type="text/css" />    
-  <link href="<c:url value="/resources/css/bootstrap-responsive.min.css" />" rel="stylesheet"  type="text/css" />    
+  <link href="<c:url value="/resources/css/bootstrap.css" />" rel="stylesheet"  type="text/css" />    
+  <link href="<c:url value="/resources/css/bootstrap-responsive.css" />" rel="stylesheet"  type="text/css" />    
   
   <style type="text/css">
     body {
