@@ -15,9 +15,9 @@ Live Demo (Heroku)
 
 Build, Run
 
-1. $ mvn clean install
-2. $ mvn jetty:run
-3. open http://localhost:8080/spring-mvc-showcase/
+1. mvn clean install
+2. mvn jetty:run
+3. http://localhost:8080/spring-mvc-showcase/
 
 ## Tutorials
 - [The original blog](http://blog.springsource.com/2010/07/22/spring-mvc-3-showcase/)
