@@ -1,16 +1,16 @@
 # SpringMVC Twitter Bootstrap Showcase
 
 ## Overview
-This fork replaces [Spring MVC Showcase's](https://github.com/SpringSource/spring-mvc-showcase) JQuery-UI with [Bootstrap](http://twitter.github.com/bootstrap/), tomcat with embedded jetty, tiles with [Sitemesh](http://www.sitemesh.org/), and other cleanup tasks (commmon js file).
+This fork replaces [Spring MVC Showcase's](https://github.com/SpringSource/spring-mvc-showcase) JQuery-UI with [Bootstrap](http://twitter.github.com/bootstrap/), Tomcat with embedded Jetty, Tiles with [Sitemesh](http://www.sitemesh.org/), and other cleanup tasks (commmon js file).
 
 For a complex use of SpringMVC/JQuery/Bootstrap/Ajax, see [Spring MVC/REST Best Practices](https://github.com/priyatam/spring-best-practices)
 
-## Major Versions used
-> Spring 3.2  
-> Twitter Bootstrap 2.3
+## Major Versions used:
+> Spring 3.2.3  
+> Twitter Bootstrap 2.3.2
 
 ## Live Demo
-http://springmvc-twbootstrap-showcase.cloudfoundry.com
+http://spring-bootstrap.herokuapp.com/
 
 ## Run locally with Maven
 1. Build 
