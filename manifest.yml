@@ -1,0 +1,8 @@
+---
+applications:
+- name: spring-bootstrap
+  memory: 256M
+  instances: 1
+  host: none
+  domain: none
+  path: .
