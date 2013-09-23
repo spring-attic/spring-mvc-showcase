@@ -4,8 +4,8 @@
 <body>
 </c:if>
 
-	<div class="row-fluid">        
-        <div class="span12" id="fileuploadContent">
+	<div class="row">        
+        <div class="col-md-12" id="fileuploadContent">
 	    	<h2> File Upload </h2>	           	        
 			<p>
 				See the <code>org.springframework.samples.mvc.fileupload</code> package for the @Controller code	
