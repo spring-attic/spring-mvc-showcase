@@ -12,8 +12,8 @@ Major Versions used:
 
 > Twitter Bootstrap 3.0.0
   Current, Master Branch  
-> Twitter Bootstrap 2.3.2
-  [Branch 2.3](https://github.com/priyatam/springmvc-twitterbootstrap-showcase/tree/2.3)
+> Twitter Bootstrap 2.3.x
+  [Branch 2.3](https://github.com/priyatam/springmvc-twitterbootstrap-showcase/tree/2.x)
   
 Live Demo on Heroku (Default is Bootstrap 3)
 
