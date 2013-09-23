@@ -2,18 +2,15 @@
 
 The unofficial Spring MVC Showcase with Bootstrap 3 and 2.
 
-A fork of [Spring MVC Showcase's](https://github.com/SpringSource/spring-mvc-showcase), replacing JQuery-UI with [Bootstrap](http://twitter.github.com/bootstrap/) versions, Tomcat with embedded Jetty, Tiles with [Sitemesh](http://www.sitemesh.org/), and other goodies.
+A fork of [Spring MVC Showcase](https://github.com/SpringSource/spring-mvc-showcase), replacing JQuery-UI with [Bootstrap](http://twitter.github.com/bootstrap/) versions, Tomcat with embedded Jetty, Tiles with [Sitemesh](http://www.sitemesh.org/), and other goodies.
 
-For a complex use of Spring/JQuery/Bootstrap/Ajax, see my [Spring Best Practices App](https://github.com/priyatam/spring-best-practices)
+For a complex use of Spring/JQuery/Bootstrap/Ajax, see my [Spring Best Practices App](https://github.com/priyatam/spring-best-practices).
 
 Major Versions used:
 
 > Spring 3.2.4 
-
-> Twitter Bootstrap 3.0.0
-  Current, Master Branch  
-> Twitter Bootstrap 2.3.x
-  [Branch 2.3](https://github.com/priyatam/springmvc-twitterbootstrap-showcase/tree/2.x)
+> Twitter Bootstrap 3.0.0 (master) 
+> Twitter Bootstrap 2.3.x[Branch 2.3](https://github.com/priyatam/springmvc-twitterbootstrap-showcase/tree/2.x)
   
 Live Demo on Heroku (Default is Bootstrap 3)
 
