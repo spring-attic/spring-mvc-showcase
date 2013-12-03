@@ -8,10 +8,10 @@ For a complex use of Spring/JQuery/Bootstrap/Ajax, see my [Spring Best Practices
 
 Major Versions used:
 
-- Spring 3.2.4 
-- Twitter Bootstrap 3.0.0 (master) 
+- Spring 3.2.5
+- Twitter Bootstrap 3.0.2 (master)
 - Twitter Bootstrap 2.3.x ([Branch 2.3](https://github.com/priyatam/springmvc-twitterbootstrap-showcase/tree/2.x))
-  
+
 Live Demo on Heroku (Default is Bootstrap 3)
 
 > http://spring-bootstrap.herokuapp.com/
