@@ -69,11 +69,8 @@ public class MessageConvertersController {
 	}
 
 	@RequestMapping(value="/json", method=RequestMethod.GET)
-	public ResponseEntity<JavaBean> writeJson() {
-		HttpHeaders headers = new HttpHeaders();
-		headers.setContentType(MediaType.TEXT_PLAIN);
-		return new ResponseEntity<JavaBean>(new JavaBean("bar", "apple"), headers , HttpStatus.OK);
-//		return new JavaBean("bar", "apple");
+	public @ResponseBody JavaBean writeJson() {
+		return new JavaBean("bar", "apple");
 	}
 
 	// AtomFeedHttpMessageConverter (requires Rome on the classpath - useful for serving Atom feeds)
