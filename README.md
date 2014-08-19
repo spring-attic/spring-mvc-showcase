@@ -42,12 +42,9 @@ In your preferred IDE such as SpringSource Tool Suite (STS) or IDEA:
 
 Access the deployed web application at: http://localhost:8080/spring-mvc-showcase/
 
-Other info:
+Note:
 -------------------
-Framework version illustrated: Spring MVC 3.1
-
-The slide presentation is located in this directory and named MasteringSpringMVC3.pdf.
-
-A screen cast showing the showcase in action is [available in QuickTime format](http://s3.springsource.org/MVC/mvc-showcase-screencast.mov).
 
 This showcase originated from a [blog post](http://blog.springsource.com/2010/07/22/spring-mvc-3-showcase/) and was adapted into a SpringOne presentation called [Mastering MVC 3](http://www.infoq.com/presentations/Mastering-Spring-MVC-3).
+
+A screen cast showing the showcase in action is [available in QuickTime format](http://s3.springsource.org/MVC/mvc-showcase-screencast.mov).
