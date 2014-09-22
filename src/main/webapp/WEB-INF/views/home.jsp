@@ -31,7 +31,7 @@
           </h3>    
 
           <ol>
-            <li>Clone: <br/> <code> git clone git://github.com/priyatam/springmvc-twitterbootstrap-showcase.git </code> </li>
+            <li>Clone: <br/> <code> git clone git://github.com/priyatam/springmvc-bootstrap-showcase.git </code> </li>
             <li>Build: <br/> <code> $ mvn clean install </code> </li>
             <li>Run: <br/>  <code> $ mvn jetty:run </code></li>
             <li>See: <br/>  <code>http://localhost:8080/spring-mvc-showcase/ </code> </li>                                
