@@ -4,7 +4,7 @@ The unofficial Spring MVC Showcase with Bootstrap.
 
 A fork of [Spring MVC Showcase](https://github.com/SpringSource/spring-mvc-showcase), replacing JQuery-UI with [Bootstrap](http://twitter.github.com/bootstrap/), Tomcat with Jetty, Tiles with [Sitemesh](http://www.sitemesh.org/) and other goodies.
 
-The user-interface in this example is basic and doesn't utilize the full power of Bootstrap and Less. If you're interested in a modern, frontend development wit GulpJs and a pure Bootstrap experience, checkout [Lesser](https://github.com/priyatam/lesser).
+The user-interface in this example is basic and doesn't utilize the full power of Bootstrap and Less. If you're interested in a modern, frontend development with [GulpJs](http://gulpjs.com) and a pure Bootstrap experience, checkout [Lesser](https://github.com/priyatam/lesser).
 
 Branches:
 
@@ -29,11 +29,11 @@ Preview at:
 
 ## Tutorials
 
-- [Spring Best Practices](https://github.com/priyatam/spring-best-practices).
+- [Spring Best Practices](https://github.com/priyatam/spring-best-practices)
 - [SpringMVC Screencast](http://s3.springsource.org/MVC/mvc-showcase-screencast.mov) showing the showcase in action
 
 ## Status
 
-I now code primarily in Clojure and Nodejs and no longer active in Java.
+I'm no longer active in Java and code primarily in Nodejs and Clojure.
 
-If you're interested in maintaining this repo, including a complete refactor of the frontend with Backbone/Angular and Bootstrap/Less, please email me.
+If you're interested in maintaining this repo, including a port of the frontend with Backbone or [Angular](http://java.dzone.com/articles/angularjs-single-page-app), please email me.
