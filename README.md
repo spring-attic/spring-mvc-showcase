@@ -1,3 +1,5 @@
+[![](https://ci.solanolabs.com:443/solano-sample-apps/spring-mvc-showcase/badges/172422.png)](https://ci.solanolabs.com:443/solano-sample-apps/spring-mvc-showcase/suites/172422)
+
 Spring MVC Showcase
 -------------------
 Demonstrates the capabilities of the Spring MVC web framework through small, simple examples.
