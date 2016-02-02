@@ -15,7 +15,6 @@ import java.util.TimeZone;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
@@ -52,7 +51,7 @@ public class FormControllerTests {
 					.param("_additionalInfo[java]", "on")
 					.param("subscribeNewsletter", "false"))
 				.andDo(print())
-				.andExpect(status().isMovedTemporarily())
+				.andExpect(status().is3xxRedirection())
 				.andExpect(redirectedUrl("/form"))
 				.andExpect(flash().attribute("message",
 						"Form submitted successfully.  Bound properties name='Joe', age=56, " +
@@ -100,8 +99,7 @@ public class FormControllerTests {
 				.andExpect(model().attributeHasFieldErrors("formBean", "name", "age"));
 	}
 	
-	private String getTimezone(int year, int month, int day)
-	{
+	private String getTimezone(int year, int month, int day) {
 		Calendar calendar = Calendar.getInstance();
 		calendar.set(Calendar.YEAR, year);
 		calendar.set(Calendar.MONTH, month);

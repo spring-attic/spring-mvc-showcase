@@ -86,6 +86,7 @@ public class JavaBean {
 		this.nested = nested;
 	}
 
+	@Override
 	public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("JavaBean");

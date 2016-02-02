@@ -35,6 +35,7 @@ public class NestedBean {
 		this.map = map;
 	}
 
+	@Override
 	public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("NestedBean");
