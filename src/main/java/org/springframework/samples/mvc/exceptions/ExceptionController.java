@@ -15,7 +15,7 @@ public class ExceptionController {
 
 	@RequestMapping("/global-exception")
 	public @ResponseBody String businessException() throws BusinessException {
-		throw new BusinessException();
+		throw new BusinessException("Business Exception occurred");
 	}
 
 	@ExceptionHandler
