@@ -1,0 +1,8 @@
+java:
+  java_version: java-7-openjdk
+  maven_version: '3.0.5'  # 2.0, 3.0, 3.1, and 3.2
+tests:
+  - type: junit
+    command: mvn test
+    report_files:
+    - "target/surefire-reports/*.xml"
