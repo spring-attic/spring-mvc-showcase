@@ -1,0 +1,24 @@
+{
+  "name": "spring-mvc-showcase",
+  "scripts": {
+  },
+  "env": {
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "addons": [
+    "librato",
+    "loaderio",
+    "papertrail",
+    "pingdom",
+    "tinfoilsecurity"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/java"
+    }
+  ]
+}
