@@ -50,4 +50,5 @@ This showcase originated from a [blog post](http://blog.springsource.com/2010/07
 A screen cast showing the showcase in action is [available in QuickTime format](http://s3.springsource.org/MVC/mvc-showcase-screencast.mov).
 
 #test1
+#test2
 TEST more and more
