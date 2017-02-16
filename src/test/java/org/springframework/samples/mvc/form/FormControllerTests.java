@@ -15,7 +15,6 @@ import java.util.TimeZone;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
@@ -52,7 +51,7 @@ public class FormControllerTests {
 					.param("_additionalInfo[java]", "on")
 					.param("subscribeNewsletter", "false"))
 				.andDo(print())
-				.andExpect(status().isMovedTemporarily())
+				.andExpect(status().isFound())
 				.andExpect(redirectedUrl("/form"))
 				.andExpect(flash().attribute("message",
 						"Form submitted successfully.  Bound properties name='Joe', age=56, " +
