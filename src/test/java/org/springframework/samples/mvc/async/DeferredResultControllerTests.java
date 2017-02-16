@@ -39,7 +39,7 @@ public class DeferredResultControllerTests extends AbstractContextControllerTest
 
 		this.mockMvc.perform(asyncDispatch(mvcResult))
 			.andExpect(status().isOk())
-			.andExpect(content().contentType("text/plain;charset=ISO-8859-1"))
+			.andExpect(content().contentType("text/plain;charset=UTF-8"))
 			.andExpect(content().string("Deferred result"));
 	}
 
@@ -67,7 +67,7 @@ public class DeferredResultControllerTests extends AbstractContextControllerTest
 
 		this.mockMvc.perform(asyncDispatch(mvcResult))
 			.andExpect(status().isOk())
-			.andExpect(content().contentType("text/plain;charset=ISO-8859-1"))
+			.andExpect(content().contentType("text/plain;charset=UTF-8"))
 			.andExpect(content().string("Handled exception: DeferredResult error"));
 	}
 
