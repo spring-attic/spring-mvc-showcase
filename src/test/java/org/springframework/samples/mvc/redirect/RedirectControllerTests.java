@@ -17,7 +17,7 @@ public class RedirectControllerTests {
 	@Before
 	public void setup() throws Exception {
 		this.mockMvc = standaloneSetup(new RedirectController(new DefaultFormattingConversionService()))
-				.alwaysExpect(status().isMovedTemporarily()).build();
+				.alwaysExpect(status().isFound()).build();
 	}
 
 	@Test
