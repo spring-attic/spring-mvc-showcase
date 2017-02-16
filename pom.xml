@@ -58,7 +58,7 @@
             <artifactId>joda-time</artifactId>
         </dependency>
 
-        <!-- In order to enable JSP support, we need to add below two dependencies -->
+        <!-- To enable JSP support, we need to add below two dependencies -->
         <dependency>
             <groupId>org.apache.tomcat.embed</groupId>
             <artifactId>tomcat-embed-jasper</artifactId>
@@ -82,7 +82,7 @@
         <dependency>
             <groupId>xmlunit</groupId>
             <artifactId>xmlunit</artifactId>
-            <version>1.2</version>
+            <version>1.6</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
