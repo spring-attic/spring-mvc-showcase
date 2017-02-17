@@ -12,7 +12,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.web.context.request.async.CallableProcessingInterceptor;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.multipart.MultipartResolver;
-import org.springframework.web.multipart.commons.CommonsMultipartResolver;
+import org.springframework.web.multipart.support.StandardServletMultipartResolver;
 import org.springframework.web.servlet.config.annotation.AsyncSupportConfigurer;
 import org.springframework.web.servlet.config.annotation.PathMatchConfigurer;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
@@ -20,7 +20,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import org.springframework.web.util.UrlPathHelper;
 
 @Configuration
-@EnableScheduling //XML Equivalent of task:annotation-driven
+@EnableScheduling // XML Equivalent of task:annotation-driven
 public class WebMvcConfig extends WebMvcConfigurerAdapter
 {
     /* Maps '/' requests to the 'home' view */
@@ -98,11 +98,17 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter
 
     /*
      * Only needed because we require fileupload in the
-     * org.springframework.samples.mvc.fileupload package
+     * org.springframework.samples.mvc.fileupload package 
+     * Bean name must be "multipartResolver", by default Spring uses method name as bean name.
+     * 
+     * Spring uses MultipartResolver interface to handle the file uploads in web application, two of the implementation :
+        1. StandardServletMultipartResolver – Servlet 3.0 multipart request parsing.
+        2. CommonsMultipartResolver – Classic commons-fileupload.jar
      */
     @Bean
     public MultipartResolver multipartResolver()
     {
-        return new CommonsMultipartResolver();
+        return new StandardServletMultipartResolver();
     }
+
 }
