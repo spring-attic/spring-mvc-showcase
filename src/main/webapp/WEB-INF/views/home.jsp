@@ -3,11 +3,11 @@
 <html>
 <head>
 	<title>spring-mvc-showcase</title>
-	<link href="<c:url value="/resources/form.css" />" rel="stylesheet"  type="text/css" />		
+	<link href="<c:url value="/resources/form.css" />" rel="stylesheet"  type="text/css" />
 	<link href="<c:url value="/resources/jqueryui/1.8/themes/base/jquery.ui.core.css" />" rel="stylesheet" type="text/css"/>
 	<link href="<c:url value="/resources/jqueryui/1.8/themes/base/jquery.ui.theme.css" />" rel="stylesheet" type="text/css"/>
 	<link href="<c:url value="/resources/jqueryui/1.8/themes/base/jquery.ui.tabs.css" />" rel="stylesheet" type="text/css"/>
-	
+
 	<!--
 		Used for including CSRF token in JSON requests
 		Also see bottom of this file for adding CSRF token to JQuery AJAX requests
@@ -16,7 +16,7 @@
 	<meta name="_csrf_header" content="${_csrf.headerName}"/>
 </head>
 <body>
-<h1><a href="<c:url value="/" />">spring-mvc-showcase test0613</a></h1>
+<h1><a href="<c:url value="/" />">spring-mvc-showcase test today</a></h1>
 <p>Recommended: Using a Web Developer tool such a Firebug to inspect the client/server interaction</p>
 <div id="tabs">
 	<ul>
@@ -122,48 +122,48 @@
 				<form id="requestBody" class="textForm" action="<c:url value="/data/body" />" method="post">
 					<input id="requestBodySubmit" type="submit" value="Request Body" />
 				</form>
-			</li>				
+			</li>
 			<li>
 				<form id="requestBodyAndHeaders" class="textForm" action="<c:url value="/data/entity" />" method="post">
 					<input id="requestBodyAndHeadersSubmit" type="submit" value="Request Body and Headers" />
 				</form>
 			</li>
-		</ul>	
+		</ul>
 		<div id="standardArgs">
 			<h3>Standard Resolvable Web Arguments</h3>
 			<ul>
 				<li>
-					<a id="request" class="textLink" href="<c:url value="/data/standard/request" />">Request arguments</a>				
+					<a id="request" class="textLink" href="<c:url value="/data/standard/request" />">Request arguments</a>
 				</li>
 				<li>
 					<form id="requestReader" class="textForm" action="<c:url value="/data/standard/request/reader" />" method="post">
 						<input id="requestReaderSubmit" type="submit" value="Request Reader" />
 					</form>
-				</li>			
+				</li>
 				<li>
 					<form id="requestIs" class="textForm" action="<c:url value="/data/standard/request/is" />" method="post">
 						<input id="requestIsSubmit" type="submit" value="Request InputStream" />
 					</form>
 				</li>
 				<li>
-					<a id="response" class="textLink" href="<c:url value="/data/standard/response" />">Response arguments</a>				
-				</li>			
+					<a id="response" class="textLink" href="<c:url value="/data/standard/response" />">Response arguments</a>
+				</li>
 				<li>
 					<a id="writer" class="textLink" href="<c:url value="/data/standard/response/writer" />">Response Writer</a>
 				</li>
 				<li>
-					<a id="os" class="textLink" href="<c:url value="/data/standard/response/os" />">Response OutputStream</a>				
+					<a id="os" class="textLink" href="<c:url value="/data/standard/response/os" />">Response OutputStream</a>
 				</li>
 				<li>
-					<a id="session" class="textLink" href="<c:url value="/data/standard/session" />">Session</a>			
-				</li>			
+					<a id="session" class="textLink" href="<c:url value="/data/standard/session" />">Session</a>
+				</li>
 			</ul>
 		</div>
 		<div id="customArgs">
-			<h3>Custom Resolvable Web Arguments</h3>	
+			<h3>Custom Resolvable Web Arguments</h3>
 			<ul>
 				<li>
-					<a id="customArg" class="textLink" href="<c:url value="/data/custom" />">Custom</a>			
+					<a id="customArg" class="textLink" href="<c:url value="/data/custom" />">Custom</a>
 				</li>
 			</ul>
 		</div>
@@ -172,10 +172,10 @@
 		<h2>Response Writing</h2>
 		<p>
 			See the <code>org.springframework.samples.mvc.response</code> package for the @Controller code
-		</p>		
+		</p>
 		<ul>
 			<li>
-				<a id="responseBody" class="textLink" href="<c:url value="/response/annotation" />">@ResponseBody</a>			
+				<a id="responseBody" class="textLink" href="<c:url value="/response/annotation" />">@ResponseBody</a>
 			</li>
 			<li>
 				<a id="responseCharsetAccept" class="utf8TextLink" href="<c:url value="/response/charset/accept" />">@ResponseBody (UTF-8 charset requested)</a>
@@ -184,18 +184,18 @@
 				<a id="responseCharsetProduce" class="textLink" href="<c:url value="/response/charset/produce" />">@ResponseBody (UTF-8 charset produced)</a>
 			</li>
 			<li>
-				<a id="responseEntityStatus" class="textLink" href="<c:url value="/response/entity/status" />">ResponseEntity (custom status)</a>			
+				<a id="responseEntityStatus" class="textLink" href="<c:url value="/response/entity/status" />">ResponseEntity (custom status)</a>
 			</li>
 			<li>
-				<a id="responseEntityHeaders" class="textLink" href="<c:url value="/response/entity/headers" />">ResponseEntity (custom headers)</a>			
+				<a id="responseEntityHeaders" class="textLink" href="<c:url value="/response/entity/headers" />">ResponseEntity (custom headers)</a>
 			</li>
-		</ul>	
+		</ul>
 	</div>
 	<div id="messageconverters">
 		<h2>Http Message Converters</h2>
 		<p>
 			See the <code>org.springframework.samples.mvc.messageconverters</code> package for the @Controller code
-		</p>	
+		</p>
 		<div id="stringMessageConverter">
 			<h3>StringHttpMessageConverter</h3>
 			<ul>
@@ -212,7 +212,7 @@
 			<ul>
 				<li>
 					<form id="readForm" action="<c:url value="/messageconverters/form" />" method="post">
-						<input id="readFormSubmit" type="submit" value="Read Form Data" />		
+						<input id="readFormSubmit" type="submit" value="Read Form Data" />
 					</form>
 				</li>
 				<li>
@@ -223,7 +223,7 @@
 			<ul>
 				<li>
 					<form id="readXml" class="readXmlForm" action="<c:url value="/messageconverters/xml" />" method="post">
-						<input id="readXmlSubmit" type="submit" value="Read XML" />		
+						<input id="readXmlSubmit" type="submit" value="Read XML" />
 					</form>
 				</li>
 				<li>
@@ -237,12 +237,12 @@
 			<ul>
 				<li>
 					<form id="readJson" class="readJsonForm" action="<c:url value="/messageconverters/json" />" method="post">
-						<input id="readJsonSubmit" type="submit" value="Read JSON" />	
+						<input id="readJsonSubmit" type="submit" value="Read JSON" />
 					</form>
 				</li>
 				<li>
 					<form id="readJsonInvalid" class="readJsonForm invalid" action="<c:url value="/messageconverters/json" />" method="post">
-						<input id="readInvalidJsonSubmit" type="submit" value="Read invalid JSON (400 response code)" />	
+						<input id="readInvalidJsonSubmit" type="submit" value="Read invalid JSON (400 response code)" />
 					</form>
 				</li>
 				<li>
@@ -256,7 +256,7 @@
 			<ul>
 				<li>
 					<form id="readAtom" action="<c:url value="/messageconverters/atom" />" method="post">
-						<input id="readAtomSubmit" type="submit" value="Read Atom" />		
+						<input id="readAtomSubmit" type="submit" value="Read Atom" />
 					</form>
 				</li>
 				<li>
@@ -267,13 +267,13 @@
 			<ul>
 				<li>
 					<form id="readRss" action="<c:url value="/messageconverters/rss" />" method="post">
-						<input id="readRssSubmit" type="submit" value="Read Rss" />	
+						<input id="readRssSubmit" type="submit" value="Read Rss" />
 					</form>
 				</li>
 				<li>
 					<a id="writeRss" href="<c:url value="/messageconverters/rss" />">Write Rss</a>
 				</li>
-			</ul>		
+			</ul>
 		</div>
 	</div>
 	<div id="views">
@@ -285,12 +285,12 @@
 			<li>
 				<a href="<c:url value="/views/html" />">HTML generated by JSP template</a>
 			</li>
-		</ul>	
+		</ul>
 		<ul>
 			<li>
 				<a href="<c:url value="/views/viewName" />">DefaultRequestToViewNameTranslator convention</a>
 			</li>
-		</ul>	
+		</ul>
 		<ul>
 			<li>
 				<a href="<c:url value="/views/pathVariables/bar/apple" />">Using path variables in a view template</a>
@@ -322,26 +322,26 @@
 			</li>
 			<li>
 				<a id="formattedCollection" class="textLink" href="<c:url value="/convert/formattedCollection?values=2010-07-04,2011-07-04" />">@Formatted Collection</a>
-			</li>		
+			</li>
 			<li>
 				<a id="valueObject" class="textLink" href="<c:url value="/convert/value?value=123456789" />">Custom Value Object</a>
 			</li>
 			<li>
 				<a id="customConverter" class="textLink" href="<c:url value="/convert/custom?value=123-45-6789" />">Custom Converter</a>
-			</li>		
+			</li>
 		</ul>
 		<div id="convert-bean">
 			<h3>JavaBean Property Binding</h3>
 			<ul>
 				<li>
 					<a id="primitiveProp" class="textLink" href="<c:url value="/convert/bean?primitive=3" />">Primitive</a>
-				</li>	
+				</li>
 				<li>
 					<a id="dateProp" class="textLink" href="<c:url value="/convert/bean?date=2010-07-04" />">Date</a>
-				</li>	
+				</li>
 				<li>
 					<a id="maskedProp" class="textLink" href="<c:url value="/convert/bean?masked=(205) 333-3333" />">Masked</a>
-				</li>	
+				</li>
 				<li>
 					<a id="listProp" class="textLink" href="<c:url value="/convert/bean?list[0]=1&list[1]=2&list[2]=3" />">List Elements</a>
 				</li>
@@ -360,7 +360,7 @@
 	<div id="validation">
 		<h2>Validation</h2>
 		<p>
-			See the <code>org.springframework.samples.mvc.validation</code> package for the @Controller code	
+			See the <code>org.springframework.samples.mvc.validation</code> package for the @Controller code
 		</p>
 		<ul>
 			<li>
@@ -369,12 +369,12 @@
 			<li>
 				<a id="validateErrors" class="textLink" href="<c:url value="/validate?number=3&date=2010-07-01" />">Validate, errors</a>
 			</li>
-		</ul>	
+		</ul>
 	</div>
 	<div id="exceptions">
 		<h2>Exception Handling</h2>
 		<p>
-			See the <code>org.springframework.samples.mvc.exceptions</code> package for the @Controller code	
+			See the <code>org.springframework.samples.mvc.exceptions</code> package for the @Controller code
 		</p>
 		<ul>
 			<li>
@@ -388,7 +388,7 @@
 	<div id="redirect">
 		<h2>Redirecting</h2>
 		<p>
-			See the <code>org.springframework.samples.mvc.redirect</code> package for the @Controller code	
+			See the <code>org.springframework.samples.mvc.redirect</code> package for the @Controller code
 		</p>
 		<ul>
 			<li>
@@ -474,7 +474,7 @@
 		responseElement.fadeIn("slow");
 	};
 	MvcUtil.xmlencode = function(xml) {
-		//for IE 
+		//for IE
 		var text;
 		if (window.ActiveXObject) {
 		    text = xml.xml;
@@ -482,11 +482,11 @@
 		// for Mozilla, Firefox, Opera, etc.
 		else {
 		   text = (new XMLSerializer()).serializeToString(xml);
-		}			
+		}
 		    return text.replace(/\&/g,'&'+'amp;').replace(/</g,'&'+'lt;')
 	        .replace(/>/g,'&'+'gt;').replace(/\'/g,'&'+'apos;').replace(/\"/g,'&'+'quot;');
 	};
-</script>	
+</script>
 <script type="text/javascript">
 $(document).ready(function() {
 	$("#tabs").tabs();
@@ -494,7 +494,7 @@ $(document).ready(function() {
 	// Append '#' to the window location so "Back" returns to the selected tab
 	// after a redirect or a full page refresh (e.g. Views tab).
 
-	// However, note this general disclaimer about going back to previous tabs: 
+	// However, note this general disclaimer about going back to previous tabs:
 	// http://docs.jquery.com/UI/API/1.8/Tabs#Back_button_and_bookmarking
 
 	$("#tabs").bind("tabsselect", function(event, ui) { window.location.hash = ui.tab.hash; });
@@ -528,7 +528,7 @@ $(document).ready(function() {
 
 	$("#writeForm").click(function() {
 		var link = $(this);
-		$.ajax({ url: this.href, dataType: "text", beforeSend: function(req) { req.setRequestHeader("Accept", "application/x-www-form-urlencoded"); }, success: function(form) { MvcUtil.showSuccessResponse(form, link); }, error: function(xhr) { MvcUtil.showErrorResponse(xhr.responseText, link); }});					
+		$.ajax({ url: this.href, dataType: "text", beforeSend: function(req) { req.setRequestHeader("Accept", "application/x-www-form-urlencoded"); }, success: function(form) { MvcUtil.showSuccessResponse(form, link); }, error: function(xhr) { MvcUtil.showErrorResponse(xhr.responseText, link); }});
 		return false;
 	});
 
@@ -542,7 +542,7 @@ $(document).ready(function() {
 	$("a.writeXmlLink").click(function() {
 		var link = $(this);
 		$.ajax({ url: link.attr("href"),
-			beforeSend: function(req) { 
+			beforeSend: function(req) {
 				if (!this.url.match(/\.xml$/)) {
 					req.setRequestHeader("Accept", "application/xml");
 				}
@@ -550,18 +550,18 @@ $(document).ready(function() {
 			success: function(xml) {
 				MvcUtil.showSuccessResponse(MvcUtil.xmlencode(xml), link);
 			},
-			error: function(xhr) { 
+			error: function(xhr) {
 				MvcUtil.showErrorResponse(xhr.responseText, link);
 			}
 		});
 		return false;
-	});					
+	});
 
 	$("form.readJsonForm").submit(function() {
 		var form = $(this);
 		var button = form.children(":first");
 		var data = form.hasClass("invalid") ?
-				"{ \"foo\": \"bar\" }" : 
+				"{ \"foo\": \"bar\" }" :
 				"{ \"foo\": \"bar\", \"fruit\": \"apple\" }";
 		$.ajax({ type: "POST", url: form.attr("action"), data: data, contentType: "application/json", dataType: "text", success: function(text) { MvcUtil.showSuccessResponse(text, button); }, error: function(xhr) { MvcUtil.showErrorResponse(xhr.responseText, button); }});
 		return false;
@@ -594,19 +594,19 @@ $(document).ready(function() {
 	$("#writeAtom").click(function() {
 		var link = $(this);
 		$.ajax({ url: link.attr("href"),
-			beforeSend: function(req) { 
+			beforeSend: function(req) {
 				req.setRequestHeader("Accept", "application/atom+xml");
 			},
 			success: function(feed) {
 				MvcUtil.showSuccessResponse(MvcUtil.xmlencode(feed), link);
 			},
-			error: function(xhr) { 
+			error: function(xhr) {
 				MvcUtil.showErrorResponse(xhr.responseText, link);
 			}
 		});
 		return false;
 	});
-	
+
 	$("#readRss").submit(function() {
 		var form = $(this);
 		var button = form.children(":first");
@@ -615,15 +615,15 @@ $(document).ready(function() {
 	});
 
 	$("#writeRss").click(function() {
-		var link = $(this);	
+		var link = $(this);
 		$.ajax({ url: link.attr("href"),
-			beforeSend: function(req) { 
+			beforeSend: function(req) {
 				req.setRequestHeader("Accept", "application/rss+xml");
 			},
 			success: function(feed) {
 				MvcUtil.showSuccessResponse(MvcUtil.xmlencode(feed), link);
 			},
-			error: function(xhr) { 
+			error: function(xhr) {
 				MvcUtil.showErrorResponse(xhr.responseText, link);
 			}
 		});
