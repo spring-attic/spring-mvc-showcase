@@ -16,7 +16,7 @@
 	<meta name="_csrf_header" content="${_csrf.headerName}"/>
 </head>
 <body>
-<h1><a href="<c:url value="/" />">spring-mvc-showcase test today</a></h1>
+<h1><a href="<c:url value="/" />">spring-mvc-showcase test today 0620</a></h1>
 <p>Recommended: Using a Web Developer tool such a Firebug to inspect the client/server interaction</p>
 <div id="tabs">
 	<ul>
