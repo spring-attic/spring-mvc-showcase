@@ -115,7 +115,6 @@
 			<version>2.5.3</version>
 		</dependency>
 
-		<!-- Rome Atom+RSS -->
 		<dependency>
 			<groupId>com.rometools</groupId>
 			<artifactId>rome</artifactId>
