@@ -24,7 +24,7 @@ public class FormControllerTests {
 	private MockMvc mockMvc;
 
 	@Before
-	public void setup() throws Exception {
+	public void setup() {
 
 		InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
 		viewResolver.setPrefix("/WEB-INF/");

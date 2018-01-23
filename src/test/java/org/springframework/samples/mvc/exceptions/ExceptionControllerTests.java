@@ -18,7 +18,7 @@ public class ExceptionControllerTests extends AbstractContextControllerTests {
 	private MockMvc mockMvc;
 
 	@Before
-	public void setup() throws Exception {
+	public void setup() {
 		this.mockMvc = webAppContextSetup(this.wac).build();
 	}
 

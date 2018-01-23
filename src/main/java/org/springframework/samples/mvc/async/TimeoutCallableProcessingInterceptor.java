@@ -8,7 +8,7 @@ import org.springframework.web.context.request.async.CallableProcessingIntercept
 public class TimeoutCallableProcessingInterceptor extends CallableProcessingInterceptorAdapter {
 
 	@Override
-	public <T> Object handleTimeout(NativeWebRequest request, Callable<T> task) throws Exception {
+	public <T> Object handleTimeout(NativeWebRequest request, Callable<T> task) {
 		throw new IllegalStateException("[" + task.getClass().getName() + "] timed out");
 	}
 

@@ -26,7 +26,7 @@ public class FileUploadController {
 	}
 
 	@RequestMapping(method=RequestMethod.POST)
-	public void processUpload(@RequestParam MultipartFile file, Model model) throws IOException {
+	public void processUpload(@RequestParam MultipartFile file, Model model) {
 		model.addAttribute("message", "File '" + file.getOriginalFilename() + "' uploaded successfully");
 	}
 	

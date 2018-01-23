@@ -14,7 +14,7 @@ public class CustomArgumentControllerTests {
 	private MockMvc mockMvc;
 
 	@Before
-	public void setup() throws Exception {
+	public void setup() {
 		this.mockMvc = standaloneSetup(new CustomArgumentController())
 				.setCustomArgumentResolvers(new CustomArgumentResolver()).build();
 	}
