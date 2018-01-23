@@ -31,11 +31,6 @@ To run the application:
 From the command line with Maven:
 
     $ cd spring-mvc-showcase
-    $ mvn tomcat7:run [-Dmaven.tomcat.port=<port no.>] (In case 8080 is busy] 
-
-or
-
-    $ cd spring-mvc-showcase
     $ mvn jetty:run 
 
 Access the deployed web application at: http://localhost:8080/spring-mvc-showcase/
