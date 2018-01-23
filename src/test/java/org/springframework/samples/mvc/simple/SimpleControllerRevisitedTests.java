@@ -15,7 +15,7 @@ public class SimpleControllerRevisitedTests {
 		standaloneSetup(new SimpleControllerRevisited()).build()
 			.perform(get("/simple/revisited").accept(MediaType.TEXT_PLAIN))
 			.andExpect(status().isOk())
-			.andExpect(content().contentType("text/plain"))
+			.andExpect(content().contentType("text/plain;charset=ISO-8859-1"))
 			.andExpect(content().string("Hello world revisited!"));
 	}
 

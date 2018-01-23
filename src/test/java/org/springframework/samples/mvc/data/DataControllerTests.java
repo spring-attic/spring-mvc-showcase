@@ -47,7 +47,7 @@ public class DataControllerTests extends AbstractContextControllerTests {
 
 	@Test
 	public void matrixVar() throws Exception {
-		this.mockMvc.perform(get("/data/matrixvars;foo=bar/simple")).andDo(print())
+		this.mockMvc.perform(get("/data/matrixvars;foo=bar/simple"))
 				.andExpect(content().string("Obtained matrix variable 'foo=bar' from path segment 'matrixvars'"));
 	}
 

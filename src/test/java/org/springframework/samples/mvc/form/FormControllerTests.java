@@ -51,7 +51,6 @@ public class FormControllerTests {
 					.param("additionalInfo[java]", "true")
 					.param("_additionalInfo[java]", "on")
 					.param("subscribeNewsletter", "false"))
-				.andDo(print())
 				.andExpect(status().isMovedTemporarily())
 				.andExpect(redirectedUrl("/form"))
 				.andExpect(flash().attribute("message",
