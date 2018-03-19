@@ -11,19 +11,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.springframework.stereotype.Controller;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+@RestController
 public class StandardArgumentsController {
 
 	// request related
 	
 	@GetMapping("/data/standard/request")
-	public @ResponseBody String standardRequestArgs(HttpServletRequest request, Principal user, Locale locale) {
+	public String standardRequestArgs(HttpServletRequest request, Principal user, Locale locale) {
 		StringBuilder buffer = new StringBuilder();
 		buffer.append("request = ").append(request).append(", ");
 		buffer.append("userPrincipal = ").append(user).append(", ");
@@ -32,19 +31,19 @@ public class StandardArgumentsController {
 	}
 
 	@PostMapping("/data/standard/request/reader")
-	public @ResponseBody String requestReader(Reader requestBodyReader) throws IOException {
+	public String requestReader(Reader requestBodyReader) throws IOException {
 		return "Read char request body = " + FileCopyUtils.copyToString(requestBodyReader);
 	}
 
 	@PostMapping("/data/standard/request/is")
-	public @ResponseBody String requestReader(InputStream requestBodyIs) throws IOException {
+	public String requestReader(InputStream requestBodyIs) throws IOException {
 		return "Read binary request body = " + new String(FileCopyUtils.copyToByteArray(requestBodyIs));
 	}
 	
 	// response related
 
 	@GetMapping("/data/standard/response")
-	public @ResponseBody String response(HttpServletResponse response) {
+	public String response(HttpServletResponse response) {
 		return "response = " + response;
 	}
 
@@ -61,7 +60,7 @@ public class StandardArgumentsController {
 	// HttpSession
 
 	@GetMapping("/data/standard/session")
-	public @ResponseBody String session(HttpSession session) {
+	public String session(HttpSession session) {
 		StringBuilder buffer = new StringBuilder();
 		buffer.append("session=").append(session);
 		return buffer.toString();
