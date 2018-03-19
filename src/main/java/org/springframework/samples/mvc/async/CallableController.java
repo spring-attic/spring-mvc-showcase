@@ -5,6 +5,7 @@ import java.util.concurrent.Callable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -15,7 +16,7 @@ import org.springframework.web.context.request.async.WebAsyncTask;
 public class CallableController {
 
 
-	@RequestMapping("/response-body")
+	@GetMapping("/response-body")
 	public @ResponseBody Callable<String> callable() {
 
 		return new Callable<String>() {
@@ -27,7 +28,7 @@ public class CallableController {
 		};
 	}
 
-	@RequestMapping("/view")
+	@GetMapping("/view")
 	public Callable<String> callableWithView(final Model model) {
 		return () -> {
 			Thread.sleep(2000);
@@ -37,7 +38,7 @@ public class CallableController {
 		};
 	}
 
-	@RequestMapping("/exception")
+	@GetMapping("/exception")
 	public @ResponseBody Callable<String> callableWithException(
 			final @RequestParam(required=false, defaultValue="true") boolean handled) {
 
@@ -53,7 +54,7 @@ public class CallableController {
 		};
 	}
 
-	@RequestMapping("/custom-timeout-handling")
+	@GetMapping("/custom-timeout-handling")
 	public @ResponseBody WebAsyncTask<String> callableWithCustomTimeoutHandling() {
 		Callable<String> callable = () -> {
 			Thread.sleep(2000);
