@@ -131,6 +131,9 @@
 		</ul>	
 		<div id="standardArgs">
 			<h3>Standard Resolvable Web Arguments</h3>
+			<p>
+			    See the <code>org.springframework.samples.mvc.data.standard</code> package for the @Controller code
+			</p>
 			<ul>
 				<li>
 					<a id="request" class="textLink" href="<c:url value="/data/standard/request" />">Request arguments</a>				
@@ -161,6 +164,9 @@
 		</div>
 		<div id="customArgs">
 			<h3>Custom Resolvable Web Arguments</h3>	
+			<p>
+				See the <code>org.springframework.samples.mvc.data.custom</code> package for the @Controller code
+			</p>
 			<ul>
 				<li>
 					<a id="customArg" class="textLink" href="<c:url value="/data/custom" />">Custom</a>			
