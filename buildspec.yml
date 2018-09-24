@@ -2,9 +2,7 @@ version: 0.1
 phases:
   build:
     commands:
-      - mvn package
+      - mvn clean package
 artifacts:
   files:
-    - appspec.yml
     - target/spring-mvc-showcase.war
-    - scripts/*
