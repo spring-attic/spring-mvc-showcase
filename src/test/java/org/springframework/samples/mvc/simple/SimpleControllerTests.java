@@ -6,6 +6,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.setup.MockMvcBuilders.standaloneSetup;
 
 import org.junit.Test;
+import cucumber.api.junit.Cucumber;
+import org.junit.runner.RunWith;
 
 public class SimpleControllerTests {
 
@@ -17,5 +19,11 @@ public class SimpleControllerTests {
 			.andExpect(content().contentType("text/plain;charset=ISO-8859-1"))
 			.andExpect(content().string("Hello world!"));
 	}
+
+//	@Test
+//	@RunWith(Cucumber.class)
+//	public class RunCukesTest {
+//			
+//	}
 
 }

@@ -11,7 +11,6 @@
 		<java-version>1.7</java-version>
 		<org.springframework-version>4.2.2.RELEASE</org.springframework-version>
 		<org.springframework.security-version>4.0.1.RELEASE</org.springframework.security-version>
-		<org.aspectj-version>1.8.1</org.aspectj-version>
 		<org.slf4j-version>1.7.12</org.slf4j-version>
 	</properties>
 	<dependencies>
@@ -28,18 +27,26 @@
 				 </exclusion>
 			</exclusions>
 		</dependency>
+    <!-- cucumber -->
+		<dependency>
+	    <groupId>info.cukes</groupId>
+	    <artifactId>cucumber-java</artifactId>
+	    <version>1.2.5</version>
+	    <scope>test</scope>
+		</dependency>
+		<dependency>
+    	<groupId>info.cukes</groupId>
+    	<artifactId>cucumber-spring</artifactId>
+    	<version>1.2.5</version>
+    	<scope>test</scope>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
 			<version>${org.springframework-version}</version>
 		</dependency>
-		<!-- AspectJ -->
-		<dependency>
-			<groupId>org.aspectj</groupId>
-			<artifactId>aspectjrt</artifactId>
-			<version>${org.aspectj-version}</version>
-		</dependency>
-		
+
+
 		<!-- Logging -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
@@ -71,7 +78,7 @@
 			<artifactId>javax.inject</artifactId>
 			<version>1</version>
 		</dependency>
-				
+
 		<!-- Servlet -->
 		<dependency>
 			<groupId>org.apache.tomcat</groupId>
@@ -121,7 +128,7 @@
 			<artifactId>rome</artifactId>
 			<version>1.5.0</version>
 		</dependency>
-		
+
 		<!-- JSR 303 with Hibernate Validator -->
 		<dependency>
 			<groupId>javax.validation</groupId>
@@ -133,7 +140,7 @@
 			<artifactId>hibernate-validator</artifactId>
 			<version>4.1.0.Final</version>
 		</dependency>
-		
+
 		<!-- Joda Time Library -->
 		<dependency>
 			<groupId>joda-time</groupId>
@@ -159,7 +166,7 @@
 			<artifactId>spring-security-web</artifactId>
 			<version>${org.springframework.security-version}</version>
 		</dependency>
-			
+
 		<!-- Test -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -172,6 +179,12 @@
 			<artifactId>junit</artifactId>
 			<version>4.11</version>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+    	<groupId>info.cukes</groupId>
+    	<artifactId>cucumber-junit</artifactId>
+    	<version>1.2.5</version>
+    	<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>xmlunit</groupId>
@@ -200,6 +213,14 @@
 			<url>http://repo.spring.io/snapshot</url>
 			<releases><enabled>false</enabled></releases>
 			<snapshots><enabled>true</enabled></snapshots>
+		</repository>
+    <!-- For cucumber -->
+		<repository>
+    	<id>sonatype-snapshots</id>
+    	<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+    	<snapshots>
+        <enabled>true</enabled>
+    	</snapshots>
 		</repository>
 		<!-- For developing against latest Spring milestones -->
 		<repository>
@@ -297,5 +318,40 @@
 				</configuration>
 			</plugin>
 		</plugins>
+		<pluginManagement>
+			<plugins>
+				<!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
+				<plugin>
+					<groupId>org.eclipse.m2e</groupId>
+					<artifactId>lifecycle-mapping</artifactId>
+					<version>1.0.0</version>
+					<configuration>
+						<lifecycleMappingMetadata>
+							<pluginExecutions>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>
+											org.codehaus.mojo
+										</groupId>
+										<artifactId>
+											aspectj-maven-plugin
+										</artifactId>
+										<versionRange>
+											[1.2,)
+										</versionRange>
+										<goals>
+											<goal>test-compile</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore></ignore>
+									</action>
+								</pluginExecution>
+							</pluginExecutions>
+						</lifecycleMappingMetadata>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
 	</build>
 </project>
