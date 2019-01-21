@@ -24,7 +24,7 @@ public class FormControllerTests {
 	private MockMvc mockMvc;
 
 	@Before
-	public void setup() throws Exception {
+	public void setup() {
 
 		InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
 		viewResolver.setPrefix("/WEB-INF/");
@@ -51,7 +51,6 @@ public class FormControllerTests {
 					.param("additionalInfo[java]", "true")
 					.param("_additionalInfo[java]", "on")
 					.param("subscribeNewsletter", "false"))
-				.andDo(print())
 				.andExpect(status().isMovedTemporarily())
 				.andExpect(redirectedUrl("/form"))
 				.andExpect(flash().attribute("message",

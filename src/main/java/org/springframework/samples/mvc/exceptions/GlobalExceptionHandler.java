@@ -1,14 +1,13 @@
 package org.springframework.samples.mvc.exceptions;
 
-import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-@ControllerAdvice
+@RestControllerAdvice
 public class GlobalExceptionHandler {
 
 	@ExceptionHandler
-	public @ResponseBody String handleBusinessException(BusinessException ex) {
+	public String handleBusinessException(BusinessException ex) {
 		return "Handled BusinessException";
 	}
 
