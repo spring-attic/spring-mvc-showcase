@@ -13,7 +13,7 @@ import org.springframework.web.servlet.support.RequestDataValueProcessor;
 public class RootConfig {
 
 	// CSRF protection. Here we only include the CsrfFilter instead of all of Spring Security.
-	// See http://docs.spring.io/spring-security/site/docs/current/reference/htmlsingle/#csrf
+	// See https://docs.spring.io/spring-security/site/docs/current/reference/htmlsingle/#csrf
 	// for more information on Spring Security's CSRF protection
 
 	@Bean

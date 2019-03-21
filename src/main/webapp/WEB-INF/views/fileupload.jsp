@@ -16,7 +16,7 @@
 		</p>
 		<!--
 		    File Uploads must include CSRF in the URL.
-		    See http://docs.spring.io/spring-security/site/docs/3.2.x/reference/htmlsingle/#csrf-multipart
+		    See https://docs.spring.io/spring-security/site/docs/3.2.x/reference/htmlsingle/#csrf-multipart
 		-->
 		<c:url var="actionUrl" value="fileupload?${_csrf.parameterName}=${_csrf.token}"/>
 		<form id="fileuploadForm" action="${actionUrl}" method="POST" enctype="multipart/form-data" class="cleanform">

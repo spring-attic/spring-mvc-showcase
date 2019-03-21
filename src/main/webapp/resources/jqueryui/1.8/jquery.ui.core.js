@@ -1,11 +1,11 @@
 /*!
  * jQuery UI 1.8.13
  *
- * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Copyright 2011, AUTHORS.txt (https://jqueryui.com/about)
  * Dual licensed under the MIT or GPL Version 2 licenses.
- * http://jquery.org/license
+ * https://jquery.org/license
  *
- * http://docs.jquery.com/UI
+ * https://docs.jquery.com/UI
  */
 (function( $, undefined ) {
 
@@ -234,7 +234,7 @@ $(function() {
 	$.support.selectstart = "onselectstart" in div;
 
 	// set display to none to avoid a layout bug in IE
-	// http://dev.jquery.com/ticket/4014
+	// https://dev.jquery.com/ticket/4014
 	body.removeChild( div ).style.display = "none";
 });
 
