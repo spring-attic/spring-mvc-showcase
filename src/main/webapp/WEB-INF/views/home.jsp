@@ -501,7 +501,7 @@ $(document).ready(function() {
 	// after a redirect or a full page refresh (e.g. Views tab).
 
 	// However, note this general disclaimer about going back to previous tabs: 
-	// http://docs.jquery.com/UI/API/1.8/Tabs#Back_button_and_bookmarking
+	// https://docs.jquery.com/UI/API/1.8/Tabs#Back_button_and_bookmarking
 
 	$("#tabs").bind("tabsselect", function(event, ui) { window.location.hash = ui.tab.hash; });
 
@@ -643,7 +643,7 @@ $(document).ready(function() {
 	});
 
 	// Include CSRF token as header in JQuery AJAX requests
-	// See http://docs.spring.io/spring-security/site/docs/3.2.x/reference/htmlsingle/#csrf-include-csrf-token-ajax
+	// See https://docs.spring.io/spring-security/site/docs/3.2.x/reference/htmlsingle/#csrf-include-csrf-token-ajax
 	var token = $("meta[name='_csrf']").attr("content");
 	var header = $("meta[name='_csrf_header']").attr("content");
 	$(document).ajaxSend(function(e, xhr, options) {
