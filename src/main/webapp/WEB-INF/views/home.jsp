@@ -40,6 +40,7 @@
 			See the <code>org.springframework.samples.mvc.simple</code> package for the @Controller code
 		</p>
 		<p> This line is added for openshift practice(YD)</p>
+        <p> This second line is added for openshift practice with new branch (YD)</p>
 		<ul>
 			<li>
 				<a id="simpleLink" class="textLink" href="<c:url value="/simple" />">GET /simple</a>
