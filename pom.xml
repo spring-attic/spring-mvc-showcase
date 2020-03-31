@@ -37,7 +37,7 @@
 		<dependency>
 			<groupId>com.rometools</groupId>
 			<artifactId>rome</artifactId>
-			<version>1.7.1</version>
+			<version>1.12.2</version>
 		</dependency>
 		
 		<!-- Joda Time Library -->
