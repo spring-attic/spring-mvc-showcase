@@ -193,6 +193,7 @@
 				<version>2.20.1</version>
 				<configuration>
 					<includes>
+						<include>**/*Test.java</include>
 						<include>**/*Tests.java</include>
 					</includes>
 					<excludes>
