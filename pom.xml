@@ -93,7 +93,7 @@
 		<dependency>
 			<groupId>com.rometools</groupId>
 			<artifactId>rome</artifactId>
-			<version>1.9.0</version>
+			<version>1.15.0</version>
 		</dependency>
 		
 		<!-- JSR 303 with Hibernate Validator -->
