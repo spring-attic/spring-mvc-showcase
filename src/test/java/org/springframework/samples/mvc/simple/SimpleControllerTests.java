@@ -1,11 +1,12 @@
 package org.springframework.samples.mvc.simple;
 
+import org.junit.jupiter.api.Test;
+
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.setup.MockMvcBuilders.standaloneSetup;
 
-import org.junit.Test;
 
 public class SimpleControllerTests {
 

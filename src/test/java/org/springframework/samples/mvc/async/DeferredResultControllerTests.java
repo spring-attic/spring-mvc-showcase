@@ -10,21 +10,18 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.setup.MockMvcBuilders.webAppContextSetup;
 
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 import org.springframework.samples.mvc.AbstractContextControllerTests;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.web.servlet.ModelAndView;
 
-@RunWith(SpringJUnit4ClassRunner.class)
 public class DeferredResultControllerTests extends AbstractContextControllerTests {
 
 	private MockMvc mockMvc;
 
-	@Before
+	@BeforeAll
 	public void setup() throws Exception {
 		this.mockMvc = webAppContextSetup(this.wac).build();
 	}
