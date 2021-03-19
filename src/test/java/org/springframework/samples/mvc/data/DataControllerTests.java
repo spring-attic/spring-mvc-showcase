@@ -8,20 +8,17 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.setup.MockMvcBuilders.webAppContextSetup;
 
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 import org.springframework.http.MediaType;
 import org.springframework.samples.mvc.AbstractContextControllerTests;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
-@RunWith(SpringJUnit4ClassRunner.class)
 public class DataControllerTests extends AbstractContextControllerTests {
 
 	private MockMvc mockMvc;
 
-	@Before
+	@BeforeAll
 	public void setup() throws Exception {
 		this.mockMvc = webAppContextSetup(this.wac).alwaysExpect(status().isOk()).build();
 	}
@@ -47,7 +44,7 @@ public class DataControllerTests extends AbstractContextControllerTests {
 
 	@Test
 	public void matrixVar() throws Exception {
-		this.mockMvc.perform(get("/data/matrixvars;foo=bar/simple")).andDo(print())
+		this.mockMvc.perform(get("/data/matrixvars;foo=bar/simple"))
 				.andExpect(content().string("Obtained matrix variable 'foo=bar' from path segment 'matrixvars'"));
 	}
 

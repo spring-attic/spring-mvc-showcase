@@ -10,8 +10,8 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.TimeZone;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 import org.springframework.format.support.DefaultFormattingConversionService;
 import org.springframework.format.support.FormattingConversionService;
 import org.springframework.test.web.servlet.MockMvc;
@@ -20,7 +20,7 @@ public class ConvertControllerTests {
 	
 	private MockMvc mockMvc;
 
-	@Before
+	@BeforeAll
 	public void setup() throws Exception {
 		FormattingConversionService cs = new DefaultFormattingConversionService();
 		cs.addFormatterForFieldAnnotation(new MaskFormatAnnotationFormatterFactory());

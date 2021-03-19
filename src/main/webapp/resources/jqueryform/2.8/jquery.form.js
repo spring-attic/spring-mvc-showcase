@@ -5,8 +5,8 @@
  *
  * Examples and documentation at: http://malsup.com/jquery/form/
  * Dual licensed under the MIT and GPL licenses:
- *   http://www.opensource.org/licenses/mit-license.php
- *   http://www.gnu.org/licenses/gpl.html
+ *   https://www.opensource.org/licenses/mit-license.php
+ *   https://www.gnu.org/licenses/gpl.html
  */
 ;(function($) {
 
@@ -44,7 +44,7 @@
  * an HTML form using AJAX.
  */
 $.fn.ajaxSubmit = function(options) {
-	// fast fail if nothing selected (http://dev.jquery.com/ticket/2752)
+	// fast fail if nothing selected (https://dev.jquery.com/ticket/2752)
 	if (!this.length) {
 		log('ajaxSubmit: skipping submit process - no element selected');
 		return this;
@@ -160,7 +160,7 @@ $.fn.ajaxSubmit = function(options) {
 	// 06-NOV-09: now defaulting to iframe mode if file input is detected
    if (options.iframe !== false && (fileInputs || options.iframe || multipart)) {
 	   // hack to fix Safari hang (thanks to Tim Molendijk for this)
-	   // see:  http://groups.google.com/group/jquery-dev/browse_thread/thread/36395b7ab510dd5d
+	   // see:  https://groups.google.com/group/jquery-dev/browse_thread/thread/36395b7ab510dd5d
 	   if (options.closeKeepAlive) {
 		   $.get(options.closeKeepAlive, function() { fileUpload(a); });
 		}
@@ -534,7 +534,7 @@ $.fn.ajaxForm = function(options) {
 			});
 			return this;
 		}
-		// is your DOM ready?  http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+		// is your DOM ready?  https://docs.jquery.com/Tutorials:Introducing_$(document).ready()
 		log('terminating; zero elements found by selector' + ($.isReady ? '' : ' (DOM not ready)'));
 		return this;
 	}
