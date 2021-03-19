@@ -23,7 +23,7 @@ public class MappingControllerTests extends AbstractContextControllerTests {
 	private MockMvc mockMvc;
 
 	@Before
-	public void setup() throws Exception {
+	public void setup() {
 		this.mockMvc = webAppContextSetup(this.wac).alwaysExpect(status().isOk()).build();
 	}
 

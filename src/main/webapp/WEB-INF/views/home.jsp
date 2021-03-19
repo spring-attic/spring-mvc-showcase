@@ -84,7 +84,7 @@
 				<a id="byProducesAcceptJson" class="writeJsonLink" href="<c:url value="/mapping/produces" />">By produces via Accept=application/json</a>
 			</li>
             <li>
-                <a id="byProducesAcceptXml" class="writeXmlLink" href="<c:url value="/mapping/produces" />">By produces via Accept=appilcation/xml</a>
+                <a id="byProducesAcceptXml" class="writeXmlLink" href="<c:url value="/mapping/produces" />">By produces via Accept=application/xml</a>
             </li>
             <li>
               <a id="byProducesJsonExt" class="writeJsonLink" href="<c:url value="/mapping/produces.json" />">By produces via ".json"</a>
@@ -131,6 +131,9 @@
 		</ul>	
 		<div id="standardArgs">
 			<h3>Standard Resolvable Web Arguments</h3>
+			<p>
+			    See the <code>org.springframework.samples.mvc.data.standard</code> package for the @Controller code
+			</p>
 			<ul>
 				<li>
 					<a id="request" class="textLink" href="<c:url value="/data/standard/request" />">Request arguments</a>				
@@ -161,6 +164,9 @@
 		</div>
 		<div id="customArgs">
 			<h3>Custom Resolvable Web Arguments</h3>	
+			<p>
+				See the <code>org.springframework.samples.mvc.data.custom</code> package for the @Controller code
+			</p>
 			<ul>
 				<li>
 					<a id="customArg" class="textLink" href="<c:url value="/data/custom" />">Custom</a>			
@@ -495,7 +501,7 @@ $(document).ready(function() {
 	// after a redirect or a full page refresh (e.g. Views tab).
 
 	// However, note this general disclaimer about going back to previous tabs: 
-	// http://docs.jquery.com/UI/API/1.8/Tabs#Back_button_and_bookmarking
+	// https://docs.jquery.com/UI/API/1.8/Tabs#Back_button_and_bookmarking
 
 	$("#tabs").bind("tabsselect", function(event, ui) { window.location.hash = ui.tab.hash; });
 
@@ -637,7 +643,7 @@ $(document).ready(function() {
 	});
 
 	// Include CSRF token as header in JQuery AJAX requests
-	// See http://docs.spring.io/spring-security/site/docs/3.2.x/reference/htmlsingle/#csrf-include-csrf-token-ajax
+	// See https://docs.spring.io/spring-security/site/docs/3.2.x/reference/htmlsingle/#csrf-include-csrf-token-ajax
 	var token = $("meta[name='_csrf']").attr("content");
 	var header = $("meta[name='_csrf_header']").attr("content");
 	$(document).ajaxSend(function(e, xhr, options) {

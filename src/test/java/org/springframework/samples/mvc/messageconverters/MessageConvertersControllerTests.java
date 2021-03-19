@@ -95,7 +95,6 @@ public class MessageConvertersControllerTests extends AbstractContextControllerT
 	@Test
 	public void writeJson2() throws Exception {
 		this.mockMvc.perform(get(URI, "json").accept(MediaType.APPLICATION_JSON))
-				.andDo(print())
 				.andExpect(jsonPath("$.foo").value("bar"))
 				.andExpect(jsonPath("$.fruit").value("apple"));
 	}

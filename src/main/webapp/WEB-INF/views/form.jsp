@@ -20,7 +20,7 @@
 			<div class="header">
 		  		<h2>Form</h2>
 		  		<c:if test="${not empty message}">
-					<div id="message" class="success">${message}</div>	
+					<div id="message" class="success"><c:out value="${message}"/></div>
 		  		</c:if>
 		  		<s:bind path="*">
 		  			<c:if test="${status.error}">

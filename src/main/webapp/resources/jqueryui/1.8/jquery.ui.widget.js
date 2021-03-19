@@ -1,11 +1,11 @@
 /*!
  * jQuery UI Widget 1.8.13
  *
- * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Copyright 2011, AUTHORS.txt (https://jqueryui.com/about)
  * Dual licensed under the MIT or GPL Version 2 licenses.
- * http://jquery.org/license
+ * https://jquery.org/license
  *
- * http://docs.jquery.com/UI/Widget
+ * https://docs.jquery.com/UI/Widget
  */
 (function( $, undefined ) {
 

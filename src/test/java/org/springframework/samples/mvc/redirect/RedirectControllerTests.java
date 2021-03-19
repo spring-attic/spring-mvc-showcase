@@ -5,8 +5,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.setup.MockMvcBuilders.standaloneSetup;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 import org.springframework.format.support.DefaultFormattingConversionService;
 import org.springframework.test.web.servlet.MockMvc;
 
@@ -14,7 +14,7 @@ public class RedirectControllerTests {
 
 	private MockMvc mockMvc;
 
-	@Before
+	@BeforeAll
 	public void setup() throws Exception {
 		this.mockMvc = standaloneSetup(new RedirectController(new DefaultFormattingConversionService()))
 				.alwaysExpect(status().isFound()).build();

@@ -13,8 +13,8 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.TimeZone;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
@@ -22,8 +22,8 @@ public class FormControllerTests {
 
 	private MockMvc mockMvc;
 
-	@Before
-	public void setup() throws Exception {
+	@BeforeAll
+	public void setup() {
 
 		InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
 		viewResolver.setPrefix("/WEB-INF/");
@@ -50,8 +50,7 @@ public class FormControllerTests {
 					.param("additionalInfo[java]", "true")
 					.param("_additionalInfo[java]", "on")
 					.param("subscribeNewsletter", "false"))
-				.andDo(print())
-				.andExpect(status().isFound())
+				.andExpect(status().isMovedTemporarily())
 				.andExpect(redirectedUrl("/form"))
 				.andExpect(flash().attribute("message",
 						"Form submitted successfully.  Bound properties name='Joe', age=56, " +
