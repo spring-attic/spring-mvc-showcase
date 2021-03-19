@@ -2,7 +2,6 @@ package org.springframework.samples.mvc.messageconverters;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -12,12 +11,11 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.MediaType;
 import org.springframework.samples.mvc.AbstractContextControllerTests;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
 public class MessageConvertersControllerTests extends AbstractContextControllerTests {
 
-	private static String URI = "/messageconverters/{action}";
+	private static final String URI = "/messageconverters/{action}";
 
 	private MockMvc mockMvc;
 
@@ -51,11 +49,11 @@ public class MessageConvertersControllerTests extends AbstractContextControllerT
 	@Test
 	public void writeForm() throws Exception {
 		this.mockMvc.perform(get(URI, "form"))
-				.andExpect(content().contentType(MediaType.APPLICATION_FORM_URLENCODED))
+				.andExpect(content().contentType("application/x-www-form-urlencoded;charset=UTF-8"))
 				.andExpect(content().string("foo=bar&fruit=apple"));
 	}
 
-	private static String XML =
+	private static final String XML =
 			"<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>" +
 			"<javaBean><foo>bar</foo><fruit>apple</fruit></javaBean>";
 
@@ -97,7 +95,7 @@ public class MessageConvertersControllerTests extends AbstractContextControllerT
 				.andExpect(jsonPath("$.fruit").value("apple"));
 	}
 
-	private static String ATOM_XML = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" +
+	private static final String ATOM_XML = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" +
 			"<feed xmlns=\"http://www.w3.org/2005/Atom\"><title>My Atom feed</title></feed>";
 
 	@Test

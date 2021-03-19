@@ -76,7 +76,7 @@ public class DataControllerTests extends AbstractContextControllerTests {
 					.contentType(MediaType.TEXT_PLAIN)
 					.content("foo".getBytes()))
 				.andExpect(content().string(
-						"Posted request body 'foo'; headers = {Content-Type=[text/plain], Content-Length=[3]}"));
+						"Posted request body 'foo'; headers = [Content-Type:\"text/plain\", Content-Length:\"3\"]"));
 	}
 
 }

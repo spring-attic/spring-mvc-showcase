@@ -36,6 +36,13 @@ public class WebMvcConfig implements WebMvcConfigurer {
 		registry.addFormatterForFieldAnnotation(new MaskFormatAnnotationFormatterFactory());
 	}
 
+	/* Equivalent XML Configuration is
+      @// @formatter:off
+      <argument-resolvers>
+            <beans:bean class="org.springframework.samples.mvc.data.custom.CustomArgumentResolver"/>
+        </argument-resolvers>
+        // @formatter:on
+     */
 	@Override
 	public void addArgumentResolvers(List<HandlerMethodArgumentResolver> resolvers) {
 		resolvers.add(new CustomArgumentResolver());
@@ -43,7 +50,6 @@ public class WebMvcConfig implements WebMvcConfigurer {
 
 	// Handle HTTP GET requests for /resources/** by efficiently serving
 	// static resources under ${webappRoot}/resources/
-
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
 		registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
@@ -66,12 +72,32 @@ public class WebMvcConfig implements WebMvcConfigurer {
 		configurer.setUrlPathHelper(pathHelper);
 	}
 
+	/* Equivalent XML Configuration is
+    @// @formatter:off
+
+        <async-support default-timeout="3000">
+            <callable-interceptors>
+                <beans:bean class="org.springframework.samples.mvc.async.TimeoutCallableProcessingInterceptor" />
+            </callable-interceptors>
+        </async-support>
+
+    // @formatter:on
+    */
 	@Override
 	public void configureAsyncSupport(AsyncSupportConfigurer configurer) {
 		configurer.setDefaultTimeout(3000);
 		configurer.registerCallableInterceptors(new TimeoutCallableProcessingInterceptor());
 	}
 
+	/*
+     * Only needed because we require fileupload in the
+     * org.springframework.samples.mvc.fileupload package
+     * Bean name must be "multipartResolver", by default Spring uses method name as bean name.
+     *
+     * Spring uses MultipartResolver interface to handle the file uploads in web application, two of the implementation :
+        1. StandardServletMultipartResolver – Servlet 3.0 multipart request parsing.
+        2. CommonsMultipartResolver – Classic commons-fileupload.jar
+     */
 	@Bean
 	public MultipartResolver multipartResolver() {
 		return new CommonsMultipartResolver();

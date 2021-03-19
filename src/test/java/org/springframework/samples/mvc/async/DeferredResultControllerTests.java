@@ -12,6 +12,7 @@ import static org.springframework.test.web.servlet.setup.MockMvcBuilders.webAppC
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.springframework.http.MediaType;
 import org.springframework.samples.mvc.AbstractContextControllerTests;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
@@ -36,7 +37,7 @@ public class DeferredResultControllerTests extends AbstractContextControllerTest
 
 		this.mockMvc.perform(asyncDispatch(mvcResult))
 			.andExpect(status().isOk())
-			.andExpect(content().contentType("text/plain;charset=UTF-8"))
+			.andExpect(content().contentTypeCompatibleWith(MediaType.TEXT_PLAIN))
 			.andExpect(content().string("Deferred result"));
 	}
 
@@ -64,7 +65,7 @@ public class DeferredResultControllerTests extends AbstractContextControllerTest
 
 		this.mockMvc.perform(asyncDispatch(mvcResult))
 			.andExpect(status().isOk())
-			.andExpect(content().contentType("text/plain;charset=UTF-8"))
+			.andExpect(content().contentTypeCompatibleWith(MediaType.TEXT_PLAIN))
 			.andExpect(content().string("Handled exception: DeferredResult error"));
 	}
 

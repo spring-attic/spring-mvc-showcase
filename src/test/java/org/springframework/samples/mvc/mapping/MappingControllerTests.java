@@ -90,14 +90,14 @@ public class MappingControllerTests extends AbstractContextControllerTests {
 
 	@Test
 	public void byProducesJsonExtension() throws Exception {
-		this.mockMvc.perform(get("/mapping/produces.json"))
+		this.mockMvc.perform(get("/mapping/produces").accept(MediaType.APPLICATION_JSON))
 				.andExpect(jsonPath("$.foo").value("bar"))
 				.andExpect(jsonPath("$.fruit").value("apple"));
 	}
 
 	@Test
 	public void byProducesXmlExtension() throws Exception {
-		this.mockMvc.perform(get("/mapping/produces.xml"))
+		this.mockMvc.perform(get("/mapping/produces").accept(MediaType.APPLICATION_XML))
 				.andExpect(xpath("/javaBean/foo").string("bar"))
 				.andExpect(xpath("/javaBean/fruit").string("apple"));
 	}
