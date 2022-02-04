@@ -1,3 +1,5 @@
+# spring-mvc-showcase is no longer actively maintained by VMware, Inc.
+
 Spring MVC Showcase
 -------------------
 Demonstrates the capabilities of the Spring MVC web framework through small, simple examples.
