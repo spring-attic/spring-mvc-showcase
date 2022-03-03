@@ -370,10 +370,10 @@
 		</p>
 		<ul>
 			<li>
-				<a id="validateNoErrors" class="textLink" href="<c:url value="/validate?number=3&date=2029-07-04" />">Validate, no errors</a>
+				<a id="validateNoErrors" class="textLink" href="<c:url value="/validate?number=3&date=2029-07-04&alphaNumericHyphen=fd-rd01" />">Validate, no errors</a>
 			</li>
 			<li>
-				<a id="validateErrors" class="textLink" href="<c:url value="/validate?number=3&date=2010-07-01" />">Validate, errors</a>
+				<a id="validateErrors" class="textLink" href="<c:url value="/validate?number=3&date=2010-07-01&alphaNumericHyphen=$%^" />">Validate, errors</a>
 			</li>
 		</ul>	
 	</div>
